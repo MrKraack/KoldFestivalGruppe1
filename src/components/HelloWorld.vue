@@ -45,6 +45,7 @@ export default {
 <style scoped lang="scss">
 h3 {
   margin: 40px 0 0;
+  background-color: $neon-pink;
 }
 ul {
   list-style-type: none;
