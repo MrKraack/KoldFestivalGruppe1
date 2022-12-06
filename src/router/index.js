@@ -8,14 +8,24 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/artist',
+    name: 'artist',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ArtistView.vue')
   },
   {
-    path: '/sanity-test',
-    name: 'sanity-test',
-    component: () => import(/* webpackChunkName: "about" */ '../views/SanityTest.vue')
+    path: '/program-oversigt',
+    name: 'program-oversigt',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ProgramOversigt.vue')
+  },
+  {
+    path: '/billet-typer',
+    name: 'billet-typer',
+    component: () => import(/* webpackChunkName: "about" */ '../views/BilletTyper.vue')
+  },
+  {
+    path: '/festival-info',
+    name: 'festival-info',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FestivalInfo.vue')
   }
 ]
 
