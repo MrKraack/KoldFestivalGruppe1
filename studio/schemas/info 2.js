@@ -9,6 +9,11 @@ export default {
         type: 'string',
       },
       {
+        name: 'undertitle',
+        title: 'Undertitel',
+        type: 'string',
+      },
+      {
         name: 'body',
         title: 'Body',
         type: 'blockContent',

@@ -58,4 +58,7 @@ li {
 a {
   color: #42b983;
 }
+
+// Egen css tilføjelse her:
+
 </style>
