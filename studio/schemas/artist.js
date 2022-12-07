@@ -4,7 +4,7 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'artistName',
+            name: 'name',
             title: 'Artist name',
             type: 'string',
         },
@@ -13,7 +13,7 @@ export default {
             title: 'Slug',
             type: 'slug',
             options: {
-                source: 'artistName',
+                source: 'name',
                 maxLength: 96,
             },
         },
@@ -38,7 +38,7 @@ export default {
             type: 'text',
         },
         {
-            name: 'artistImage',
+            name: 'image',
             title: 'Artist image',
             type: 'image',
             options: {
@@ -49,8 +49,8 @@ export default {
 
     preview: {
         select: {
-            title: 'artistName',
-            media: 'mainImage',
+            title: 'name',
+            media: 'image',
         }
     },
 }
