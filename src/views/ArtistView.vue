@@ -1,12 +1,18 @@
 <template>
     <div>
-
+    <artist-container></artist-container>
     </div>
 </template>
 
 <script>
-    export default {
-        
+import artistContainer from "@/components/ArtistContainer";
+
+export default {
+      name: 'artistView',
+      components: {
+        artistContainer,
+      },
+
     }
 </script>
 
