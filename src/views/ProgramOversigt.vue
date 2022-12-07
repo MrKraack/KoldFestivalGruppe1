@@ -1,91 +1,156 @@
 <template>
-    <div class="home">
-      <h1>Program Oversigt</h1>
-      <div class="festivalEntry">
-        <div class="loading" v-if="loading">Loading...</div>
-        <div v-if="error" class="error">
-          {{ error }}
+  <div class="container">
+    <h1>Program</h1>
+    <h1>Oversigt</h1>
+    <div class="festivalProgram">
+      <div class="loading" v-if="loading">Loading...</div>
+      <div v-if="error" class="error">
+        {{ error }}
+      </div>
+      <!-- Container for friday -->
+      <div class="fridaySection">
+        <div class="ProgramHeader">
+          <h2>Fredag</h2>
         </div>
-        <!-- Container for friday -->
-        <!-- <div class="container">
-            <div v-for="entry in festivalEntry" :key="entry._id">
-                <div v-if="entry.location == 'Godset'">
-                    <h1>Hello {{entry.title}}</h1>
-
-                </div>
-                <div v-else>
-                    <h1>Not Godset {{entry.title}}</h1>
-
-                </div>
-                
-            </div>
-
-        </div> -->
-
-        <!-- Container for Saturday -->
-        <div class="container">
-          <div v-for="entry in festivalEntry" class="post-item" :key="entry._id">
-              <h2>{{ entry.title }}</h2>
-            <p>{{entry.location}}</p>
-            <hr />
+        <div class="ProgramOverview">
+          <header>
+            <div class="col">Tid</div>
+            <div class="col">Artist</div>
+            <div class="col">Sted</div>
+          </header>
+          <div v-for="entry in festivalEntry" :key="entry._id" class="row">
+            <div class="col">timestamp</div>
+            <div class="col">{{ entry.title }}</div>
+            <div class="col">{{ entry.location }}</div>
           </div>
         </div>
       </div>
+      <!-- Container for Saturday -->
+      <div class="saturdaySection">
+        <div class="ProgramHeader">
+          <h2>Lørdag</h2>
+        </div>
+        <div class="programOverviewContent">
+          <table>
+            <tr class="programTableHeaders">
+              <th>Tid</th>
+              <th>Artist</th>
+              <th>Sted</th>
+            </tr>
+            <tr v-for="entry in festivalEntry" :key="entry._id">
+              <td>Timestamp</td>
+              <td>{{ entry.title }}</td>
+              <td>{{ entry.location }}</td>
+            </tr>
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Container for Saturday -->
     </div>
-  </template>
+  </div>
+</template>
   
-  <script>
-  import sanity from "../client";
-  
-  const query = `*[_type == "festivalentry"]{
+<script>
+import sanity from "../client";
+
+const query = `*[_type == "festivalentry"]{
     _id,
     title,
     concertTime,
     location
   }[0...50]`;
-  
-  export default {
-    name: "ProgramOversigt",
-    data() {
-      return {
-        loading: true,
-        festivalEntry: [],
-      };
+
+export default {
+  name: "ProgramOversigt",
+  data() {
+    return {
+      loading: true,
+      festivalEntry: [],
+      festivalFriday: [],
+      festivalSaturday: [],
+    };
+  },
+  created() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      this.error = this.post = null;
+      this.loading = true;
+      sanity.fetch(query).then(
+        (festivalEntry) => {
+          this.loading = false;
+          this.festivalEntry = festivalEntry;
+          console.log(this.festivalEntry);
+        },
+        (error) => {
+          this.error = error;
+        }
+      );
     },
-    created() {
-      this.fetchData();
-    },
-    methods: {
-      fetchData() {
-        this.error = this.post = null;
-        this.loading = true;
-        sanity.fetch(query).then(
-          (festivalEntry) => {
-            this.loading = false;
-            this.festivalEntry = festivalEntry;
-            console.log(this.festivalEntry);
-          },
-          (error) => {
-            this.error = error;
-          }
-        );
-      },
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .home h1{
+  },
+  computed: {
+
+
+
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.festivalProgram {
+  display: flex;
+  justify-content: space-around;
+
+  .fridaySection {
+    width: 33%;
+    border: 2px solid $neon-orange;
+
+    .ProgramOverview {
+      display: table;
+      width: 100%;
       text-align: center;
-  
+
+      header {
+        display: table-row;
+        
+
+        div {
+          display: table-cell;
+        }
+      }
+
+      .row {
+
+        display: table-row;
+        div {
+        display: table-cell;
+        text-align: left;
+        border-bottom: 2px solid $neon-orange;
+        }
+      } 
+    }
+
+
   }
-  .container {
-    margin: 0 auto;
-    max-width: 42em;
-    width: 100%;
+
+  .saturdaySection {
+    border: 2px solid $neon-orange;
+
+    table {
+      tr {
+        td {
+          border-bottom: 2px solid $neon-orange;
+          text-align: left;
+        }
+      }
+    }
+
   }
-  .post-item {
-    box-sizing: border-box;
-  }
-  </style>
+
+}
+</style>
   
