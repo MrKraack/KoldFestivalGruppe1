@@ -21,7 +21,7 @@ const query = `*[_type == "artist"]{
   location,
   description,
   image
-}[0...50]`;
+}`;
 
 export default {
   name: "artistContainer",
@@ -31,6 +31,7 @@ export default {
 
   data() {
     return {
+      loading: true,
       artists: [],
     };
   },
