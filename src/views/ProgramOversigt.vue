@@ -1,7 +1,10 @@
 <template>
   <div class="container">
-    <h1>Program</h1>
-    <h1>Oversigt</h1>
+    <div class="containerHeader">
+      <h1>Program</h1>
+      <h1>Oversigt</h1>
+    </div>
+
     <div class="festivalProgram">
       <div class="loading" v-if="loading">Loading...</div>
       <div v-if="error" class="error">
@@ -9,7 +12,7 @@
       </div>
       <!-- Container for friday -->
       <div class="fridaySection">
-        <div class="ProgramHeader">
+        <div class="programHeader">
           <h2>Fredag</h2>
         </div>
         <div class="ProgramOverview">
@@ -48,7 +51,6 @@
 
       </div>
 
-      <!-- Container for Saturday -->
     </div>
   </div>
 </template>
@@ -101,40 +103,63 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.festivalProgram {
-  display: flex;
-  justify-content: space-around;
+.container {
+  background-color: $bg-color;
 
-  .fridaySection {
-    width: 33%;
-    border: 2px solid $neon-orange;
+  .containerHeader {
+    color: $neon-orange;
+  }
 
-    .ProgramOverview {
-      display: table;
-      width: 100%;
-      text-align: center;
+  .festivalProgram {
+    display: flex;
+    color: white;
+    justify-content: space-around;
 
-      header {
-        display: table-row;
-        
+    .fridaySection {
+      width: 33%;
+      border: 2px solid $neon-orange;
+      border-radius: 5px;
 
-        div {
-          display: table-cell;
+      .programHeader {
+        background-color: $neon-orange;
+
+        h2 {
+          color: #fff;
+          margin-top: 0px;          
+            
+
+        }
+
+      }
+
+      .ProgramOverview {
+        display: table;
+        width: 100%;
+        text-align: center;
+
+        header {
+          display: table-row;
+
+          div {
+            display: table-cell;
+            font-weight: bold;
+
+          }
+        }
+
+        .row {
+          display: table-row;
+
+          div {
+            display: table-cell;
+            text-align: left;
+            border-bottom: 2px solid $neon-orange;
+          }
         }
       }
 
-      .row {
 
-        display: table-row;
-        div {
-        display: table-cell;
-        text-align: left;
-        border-bottom: 2px solid $neon-orange;
-        }
-      } 
     }
-
-
   }
 
   .saturdaySection {

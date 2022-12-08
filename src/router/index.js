@@ -18,6 +18,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/ProgramOversigt.vue')
   },
   {
+    path: '/program-oversigt-mobil',
+    name: 'program-oversigt-mobil',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ProgramOversigtMobil.vue')
+  },
+  {
     path: '/billet-typer',
     name: 'billet-typer',
     component: () => import(/* webpackChunkName: "about" */ '../views/BilletTyper.vue')
