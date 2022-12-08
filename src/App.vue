@@ -1,30 +1,49 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/artist">Artist</router-link> |
-    <router-link to="/program-oversigt">Program Oversigt</router-link> |
-    <router-link to="/billet-typer">Billet Typer</router-link>
-    <router-link to="/festival-info">Festival Info</router-link>
-  </nav>
-  <router-view/>
+  <TopNav />
+  <main>
+    <hero-section id="home"/>
+  </main>
 </template>
 
+<script>
+import TopNav from "@/components/Navigation/TopNav";
+import HeroSection from "@/views/HeroSection";
+
+export default {
+  name: "App",
+  components: {
+    TopNav,
+    HeroSection
+  }
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-lt-std-6');
+
+  body {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  #app {
+    font-family: 'Helvetica Neue LT Std', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin: 0;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Helvetica Neue LT Std', sans-serif;
+  font-size: $text-xs;
+  letter-spacing: 0.15em;
 }
 
 nav {
-  padding: 30px;
-
   a {
-    font-weight: bold;
-    color: #2c3e50;
-
     &.router-link-exact-active {
       color: #42b983;
     }
