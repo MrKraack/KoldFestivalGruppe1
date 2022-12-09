@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-
-createApp(App).use(router).mount('#app')
+import vueClickOutsideElement from 'vue-click-outside-element'
+createApp(App).use(router).use(vueClickOutsideElement).mount('#app')

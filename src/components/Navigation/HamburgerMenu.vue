@@ -34,12 +34,11 @@ export default {
 
 .hamburger,
 .navigation {
-  transition: transform 0.3s 0.1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* hamburger position after navigation bar is active */
 .hamburger--active {
-  transform: translateX(-120px);
+  transform: translateX(-120px) translateY(5px);
 }
 
 .hamburger__box {
@@ -52,6 +51,8 @@ export default {
   border-radius: 10px 0 0 10px;
   filter: drop-shadow(0px 0px 3px $neon-pink);
 }
+
+
 
 .hamburger__inner {
   width: 23px;
@@ -94,5 +95,31 @@ export default {
 
 .hamburger--active .hamburger__inner::after {
   transform: translateY(-10px) rotate(-45deg);
+}
+
+@media screen and (min-width: $screen-tablet-vertical) and (max-width: $screen-tablet-horizontal) {
+  .hamburger__box {
+    margin-right: 50px;
+    width: 90px;
+    height: 60px;
+    border-radius: 20px;
+  }
+  .hamburger__inner, .hamburger__inner::before,
+  .hamburger__inner::after {
+    width: 39px;
+  }
+  .hamburger__inner::before,
+   {
+    top: -16px
+  }
+  .hamburger__inner::after {
+    top: 16px
+  }
+  .hamburger--active .hamburger__inner::before {
+    transform: translateY(16px) rotate(45deg)
+  }
+  .hamburger--active .hamburger__inner::after {
+    transform: translateY(-16px) rotate(-45deg)
+  }
 }
 </style>

@@ -42,6 +42,13 @@ button {
   letter-spacing: 0.15em;
 }
 
+  a {
+    text-decoration: none;
+  }
+
+  h2 {
+    margin: 0;
+  }
 nav {
   a {
     &.router-link-exact-active {
