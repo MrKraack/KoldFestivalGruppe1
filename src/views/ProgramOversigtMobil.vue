@@ -11,9 +11,9 @@
                 {{ error }}
             </div>
             <!-- Container for friday -->
-            <div class="fridaySection">
-                <div class="program_oversigt" @click="toggleAccordion" :class="accordionClasses">
-                    <div class="boxHeader" :class="accordionClasses">
+            <div class="sectionContainer">
+                <div class="program_oversigt" @click="toggleAccordionFriday" :class="accordionClassFriday">
+                    <div class="boxHeader" :class="accordionClassFriday">
                         <h2>FREDAG</h2>
                     </div>
                     <div class="program_oversigt-body row">
@@ -23,19 +23,37 @@
                                 <div class="col">Artist</div>
                                 <div class="col">Sted</div>
                             </header>
-                            <div v-for="entry in festivalEntry" :key="entry._id" class="row">
-                                <div class="col">timestamp</div>
+                            <div v-for="entry in festivalFriday" :key="entry._id" class="row">
+                                <div class="col">{{ convertDateToTime( entry.concertTime) }}</div>
                                 <div class="col">{{ entry.title }}</div>
                                 <div class="col">{{ entry.location }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <!-- Container for Saturday -->
-
+            <div class="sectionContainer">
+                <div class="program_oversigt" @click="toggleAccordionSaturday" :class="accordionClassSaturday">
+                    <div class="boxHeader" :class="accordionClassSaturday">
+                        <h2>LØRDAG</h2>
+                    </div>
+                    <div class="program_oversigt-body row">
+                        <div class="program_oversigt-content">
+                            <header>
+                                <div class="col">Tid</div>
+                                <div class="col">Artist</div>
+                                <div class="col">Sted</div>
+                            </header>
+                            <div v-for="entry in festivalSaturday" :key="entry._id" class="row">
+                                <div class="col">{{ convertDateToTime( entry.concertTime) }}</div>
+                                <div class="col">{{ entry.title }}</div>
+                                <div class="col">{{ entry.location }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -61,7 +79,8 @@ export default {
     },
     data() {
         return {
-            isOpen: true,
+            isFridayOpen: true,
+            isSaturdayOpen: true,
 
             clicked: false,
             loading: true,
@@ -74,8 +93,12 @@ export default {
         this.fetchData();
     },
     methods: {
-        toggleAccordion() {
-            this.isOpen = !this.isOpen;
+        toggleAccordionFriday() {
+            this.isFridayOpen = !this.isFridayOpen;
+
+        },
+        toggleAccordionSaturday() {
+            this.isSaturdayOpen = !this.isSaturdayOpen;
 
         },
         fetchData() {
@@ -85,27 +108,71 @@ export default {
                 (festivalEntry) => {
                     this.loading = false;
                     this.festivalEntry = festivalEntry;
-                    console.log(this.festivalEntry);
-                },
-                (error) => {
-                    this.error = error;
+                    console.log(festivalEntry)
+
+                    // loop through the array, convert time and push to friday or saturday
+                    for (let i = 0; i < festivalEntry.length; i++) {
+                        //Get the time from current entry
+                        let dateTime = festivalEntry[i].concertTime;
+                        //Convert date from ISO to JS format
+                        let newConvertedDate = new Date(dateTime).toString();
+                        //Assign new date to Entry
+                        festivalEntry[i].concertTime = newConvertedDate;
+                        //Regex to find the first word and copies all of it - In this case, it's the day
+                        let dayRegex = /^(\w*)/;
+                        //Variable to hold what regex finds/matches
+                        let dayFromDate = newConvertedDate.match(dayRegex)[0];
+
+                        if (dayFromDate == "Fri") {
+                            this.festivalFriday.push(festivalEntry[i]);
+
+                        } else if (dayFromDate == "Sat") {
+                            this.festivalSaturday.push(festivalEntry[i]);
+                        }
+                        //Sort the array by concert time
+                        this.festivalFriday.sort(this.compare);
+                        this.festivalSaturday.sort(this.compare);
+                    }
+                    console.log("Friday entry");
+                    console.log(this.festivalFriday);
+                    (error) => {
+                        this.error = error;
+                    }
                 }
-            );
+            )
         },
-
-    },
-    computed: {
-        accordionClasses: function () {
-            return {
-                "is-closed": this.isOpen,
-                "is-active": !this.isOpen,
-            };
+        convertDateToTime(date) {
+            let timeRegex = /^.{16}(.{5})/;
+            let newTime = date.match(timeRegex)[1];
+            return newTime;
 
         },
-
-
-
+         compare(a, b) {
+            if (a.concertTime < b.concertTime) {
+         return -1;
+        }
+        if (a.concertTime > b.concertTime) {
+            return 1;
+        }
+    return 0;
+}
+        
+        },
+computed: {
+    accordionClassFriday: function () {
+        return {
+            "is-closed": this.isFridayOpen,
+            "is-active": !this.isFridayOpen,
+        };
     },
+    accordionClassSaturday: function () {
+        return {
+            "is-closed": this.isSaturdayOpen,
+            "is-active": !this.isSaturdayOpen,
+        };
+    },
+
+},
 };
 </script>
   
@@ -124,18 +191,19 @@ export default {
         }
     }
 
-    .fridaySection {
+    .sectionContainer {
         flex-direction: column;
-        margin: 0px 20px;
+        margin: 10px;
         border: 2px solid $neon-orange;
-        box-shadow: 0px 0px 5px $neon-orange;
+        box-shadow: 0px 0px 10px $neon-orange;
         border-radius: 5px;
 
         .boxHeader {
-            margin: 0px;           
+            margin: 0px;
             background-color: $bg-color;
             color: $neon-orange;
-            h2{
+
+            h2 {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -143,7 +211,7 @@ export default {
                 margin: 0px;
 
             }
-            
+
         }
 
         .program_oversigt-body {
@@ -151,23 +219,28 @@ export default {
             max-height: 800px;
             overflow: hidden;
             transition: max-height 0.3s ease-in-out;
+
             .program_oversigt-content {
                 display: table;
                 width: 100%;
                 text-align: center;
                 background-color: $bg-color;
                 color: white;
+
                 header {
                     display: table-row;
+
                     div {
                         border-bottom: 2px solid $neon-orange;
                         display: table-cell;
                         font-weight: bold;
                     }
-                    
+
                 }
+
                 .row {
                     display: table-row;
+
                     div {
                         display: table-cell;
                         text-align: left;
@@ -175,22 +248,21 @@ export default {
                         padding: 10px;
                     }
                 }
+
                 .row:last-child {
-                    div{
+                    div {
                         border-bottom: 0px;
                     }
-
                 }
-
             }
-
         }
 
         .is-closed .program_oversigt-body {
             max-height: 0px;
-            
+
         }
-        .is-active .boxHeader{
+
+        .is-active .boxHeader {
             color: white;
             max-height: fit-content;
             background-color: $neon-orange;
@@ -198,9 +270,5 @@ export default {
         }
     }
 }
-
-
-
-
 </style>
     
