@@ -1,9 +1,11 @@
 <template>
     <div>
         <h3>FAQ</h3>
+        <div class="container">
         <faq-item v-for="(faq,index) in faqData" :key="index" 
         :title="faq.faqTitle"
         :beskrivelse="faq.faqBeskrivelse"/>
+        </div>
     </div>
 </template>
 
@@ -49,5 +51,11 @@ const query = `*[_type == "faq"] {
 </script>
 
 <style lang="scss" scoped>
+.container {
+    border: 1px solid blue;
+    border-radius: 20px;
+    padding-bottom: 40px;
+    padding-top:20px;
+}
 
 </style>

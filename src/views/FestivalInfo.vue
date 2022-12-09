@@ -4,8 +4,6 @@
         <InfoFestivalVue></InfoFestivalVue>
         <FestivalFaq></FestivalFaq>
         <SustainbilityInfo></SustainbilityInfo>
-        
-        
     </div>
 </template>
 
