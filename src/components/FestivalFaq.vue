@@ -54,8 +54,8 @@ const query = `*[_type == "faq"] {
 .container {
     border: 1px solid blue;
     border-radius: 20px;
-    padding-bottom: 40px;
-    padding-top:20px;
+    padding: 40px 0;
+    margin: 0 5rem;
 }
 
 </style>

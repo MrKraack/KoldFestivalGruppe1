@@ -54,5 +54,7 @@ const query = `*[_type == "sustain"] {
 .container {
     border: 1px solid blue;
     border-radius: 20px;
+    padding: 2rem 10rem;
+    margin: 0 5rem;
 }
 </style>

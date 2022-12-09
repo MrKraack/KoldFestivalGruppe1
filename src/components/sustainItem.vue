@@ -1,8 +1,7 @@
 <template>
-    <div>
+    <div class="line"></div>
         <h4>{{sustainTitle}}</h4>
         <p>{{sustainText}}</p>
-    </div>
 </template>
 
 <script>
@@ -15,5 +14,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+.line {
+    background-color: red;
+    height: 1px;
+    width: 50px;
+}
 </style>

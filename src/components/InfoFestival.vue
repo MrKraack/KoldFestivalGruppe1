@@ -1,17 +1,23 @@
 <template>
     <div>
         <h3>Info om festival</h3>
+        <div class="container">
+        <infoItem v-for="(info,index) in infoData" :key="index" 
+        :infoTitle="info.infoTitle"
+        :infoText="info.infoText"/>
+        </div>
     </div>
 </template>
 
 <script>
 // Til at tilføje sanity.
 import sanity from "../client";
+import infoItem from "../components/infoItem.vue"
 
 // elementer jeg skal bruge fra sanity
 const query = `*[_type == "info"] {
-    title,
-    body,
+    infoTitle,
+    infoText,
 }`;
 
     export default {
@@ -42,11 +48,20 @@ const query = `*[_type == "info"] {
                     }
                 )
             }
+        },
+        components: {
+            infoItem
         }
         
     }
 </script>
 
 <style scoped>
+.container {
+    border: 1px solid blue;
+    border-radius: 20px;
+    padding: 2rem 10rem;
+    margin: 0 5rem;
+}
 
 </style>
