@@ -2,7 +2,7 @@
   <section class="hero-section">
     <video playsinline autoplay muted loop :poster='require("@/assets/images/mockup-backround.png")' class="hero-section__video-background" >>
     <h2>hello</h2>
-      <source :src='require("@/assets/video/background-video.mp4")' type='video/mp4'>
+      <source :src='require("@/assets/video/background-video-compressed.mp4")' type='video/mp4'>
     </video>
     <div class="hero-section__main-logo">
       <img src="@/assets/images/logo-hero.png" alt="Festival's Logo">
