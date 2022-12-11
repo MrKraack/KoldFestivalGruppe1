@@ -2,6 +2,7 @@
   <TopNav />
   <main>
     <hero-section id="home"/>
+    <div class="placeholder"></div>
   </main>
 </template>
 
@@ -24,7 +25,12 @@ export default {
   body {
     margin: 0;
     box-sizing: border-box;
+    background-color: $bg-color;
   }
+
+.placeholder {
+  height: 100vh;
+}
 
   #app {
     font-family: 'Helvetica Neue LT Std', sans-serif;

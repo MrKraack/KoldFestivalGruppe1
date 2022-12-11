@@ -55,6 +55,7 @@ export default {
     position: fixed;
     width: 100vw;
     top: 25px;
+    z-index: 1;
     &__wrapper {
       width: 100%;
       display: flex;
