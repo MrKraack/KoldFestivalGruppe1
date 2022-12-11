@@ -24,9 +24,14 @@
                                 <div class="col">Sted</div>
                             </header>
                             <div v-for="entry in festivalFriday" :key="entry._id" class="row">
-                                <div class="col">{{ convertDateToTime( entry.concertTime) }}</div>
-                                <div class="col">{{ entry.title }}</div>
-                                <div class="col">{{ entry.location }}</div>
+
+                                <div class="col">
+                                    <p class="concertPlayTime">{{ convertDateToTime(entry.concertTime) }}</p>
+                                </div>
+
+                                <div class="col"><p> {{ entry.title }}</p></div>
+                                <div class="col"><p>{{ entry.location }}</p></div>
+
                             </div>
                         </div>
                     </div>
@@ -46,7 +51,7 @@
                                 <div class="col">Sted</div>
                             </header>
                             <div v-for="entry in festivalSaturday" :key="entry._id" class="row">
-                                <div class="col">{{ convertDateToTime( entry.concertTime) }}</div>
+                                <div class="col">{{ convertDateToTime(entry.concertTime) }}</div>
                                 <div class="col">{{ entry.title }}</div>
                                 <div class="col">{{ entry.location }}</div>
                             </div>
@@ -147,32 +152,32 @@ export default {
             return newTime;
 
         },
-         compare(a, b) {
+        compare(a, b) {
             if (a.concertTime < b.concertTime) {
-         return -1;
+                return -1;
+            }
+            if (a.concertTime > b.concertTime) {
+                return 1;
+            }
+            return 0;
         }
-        if (a.concertTime > b.concertTime) {
-            return 1;
-        }
-    return 0;
-}
-        
-        },
-computed: {
-    accordionClassFriday: function () {
-        return {
-            "is-closed": this.isFridayOpen,
-            "is-active": !this.isFridayOpen,
-        };
-    },
-    accordionClassSaturday: function () {
-        return {
-            "is-closed": this.isSaturdayOpen,
-            "is-active": !this.isSaturdayOpen,
-        };
-    },
 
-},
+    },
+    computed: {
+        accordionClassFriday: function () {
+            return {
+                "is-closed": this.isFridayOpen,
+                "is-active": !this.isFridayOpen,
+            };
+        },
+        accordionClassSaturday: function () {
+            return {
+                "is-closed": this.isSaturdayOpen,
+                "is-active": !this.isSaturdayOpen,
+            };
+        },
+
+    },
 };
 </script>
   
@@ -241,11 +246,21 @@ computed: {
                 .row {
                     display: table-row;
 
-                    div {
+                    .col {
                         display: table-cell;
                         text-align: left;
                         border-bottom: 2px solid $neon-orange;
                         padding: 10px;
+                        width: 33%;
+                        vertical-align: middle;
+                        initial-letter: left;
+                            p {
+                                margin: 0px;
+                            }
+                            .concertPlayTime{
+                                text-align: center;
+                            }
+                        
                     }
                 }
 
