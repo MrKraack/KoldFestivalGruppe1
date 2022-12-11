@@ -1,16 +1,16 @@
 <template>
   <nav class="mobile-navigation" :class="active ? 'mobile-navigation--visible' : 'mobile-navigation--hidden'">
     <div class="mobile-navigation__links-wrapper">
-    <a href="">Køb billet</a>
+    <a href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/" target="blank">Køb billet</a>
     <a href="">Artister</a>
     <a href="">Billeter</a>
     <a href="">Om kold</a>
     </div>
     <div class="mobile-navigation__social-links">
-      <a href="">
+      <a href="https://www.facebook.com/koldfestival" target="blank">
         <facebook-icon/>
       </a>
-      <a href="">
+      <a href="https://www.instagram.com/koldfestival/?hl=da" target="blank">
         <instagram-icon/>
       </a>
     </div>

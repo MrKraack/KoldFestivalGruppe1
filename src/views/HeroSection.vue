@@ -9,20 +9,20 @@
       <p class="event-date">2. - 3. februar</p>
     </div>
     <div class="hero-section__social-links">
-      <a href="">
+      <a href="https://www.instagram.com/koldfestival/?hl=da" target="blank">
         <instagram-icon/>
       </a>
-      <a href="">
+      <a href="https://www.facebook.com/koldfestival" target="blank">
         <facebook-icon/>
       </a>
     </div>
     <div class="hero-section__ice-overlay overlay-top">
-      <img class="overlay-mobile" src="@/assets/images/ice-overlay-mobile.png" alt="">
-      <img class="overlay-desktop" src="@/assets/images/ice-overlay-desktop.png" alt="">
+      <img class="overlay-mobile" src="@/assets/images/ice-overlay-mobile.png">
+      <img class="overlay-desktop" src="@/assets/images/ice-overlay-desktop.png">
     </div>
     <div class="hero-section__ice-overlay overlay-bottom">
-      <img class="overlay-mobile" src="@/assets/images/ice-overlay-mobile.png" alt="">
-      <img class="overlay-desktop" src="@/assets/images/ice-overlay-desktop.png" alt="">
+      <img class="overlay-mobile" src="@/assets/images/ice-overlay-mobile.png">
+      <img class="overlay-desktop" src="@/assets/images/ice-overlay-desktop.png">
     </div>
   </section>
 </template>

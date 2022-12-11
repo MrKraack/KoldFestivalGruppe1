@@ -30,6 +30,32 @@ export default {
       font-size: $text-large;
       text-transform: uppercase;
       color: white;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 70px;
+        width: 100%;
+        transform: translateY(-67%);
+        left: 0;
+        background-color: transparent;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      &:hover::before {
+        transform: scaleX(1);
+      }
     }
   }
 

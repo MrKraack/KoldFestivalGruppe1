@@ -1,8 +1,10 @@
 <template>
   <aside v-click-outside-element="clickedOutside"  class="top-nav">
     <div class="top-nav__wrapper">
-  <button class="top-nav__buy-now-button">
+  <button class="top-nav__buy-now-button top-nav__buy-now-button--desktop-button">
+    <a target="blank" href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/">
     Køb billet
+    </a>
     <logo-small class="small-logo"/>
   </button>
   <hamburger-menu class="top-nav__hamburger" :active="navigationActive && !outsideClickDetected" @toggle-menu="toggleNavigation"/>
@@ -36,14 +38,12 @@ export default {
     clickedOutside() {
       if (this.navigationActive === false) return
       this.outsideClickDetected = true
-      console.log(`clicked outside: ${this.outsideClickDetected}`)
     },
     toggleNavigation() {
       this.navigationActive = !this.navigationActive
       if (this.navigationActive === false) {
         this.outsideClickDetected = false
       }
-      console.log(`navigation toggle: ${this.navigationActive}`)
     }
   }
 }
@@ -79,8 +79,10 @@ export default {
       filter: drop-shadow(0px 0px 3px $neon-pink);
       width: 135px;
       height: 30px;
-      color: white;
       background-color: $neon-pink;
+      a {
+      color: white;
+      }
     }
     &__desktop-navigation {
       display: none;
@@ -98,6 +100,44 @@ export default {
         border-radius: 20px;
         margin-left: 50px;
       }
+        &__buy-now-button--desktop-button {
+          color: black;
+
+          &:hover {
+          box-shadow: none;
+          color: white;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.3s, border 0.3s;
+          }
+          &:hover::before {
+            opacity: 0
+          }
+          &::after {
+          content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 3px solid white;
+            border-radius: 20px;
+            opacity: 0;
+            z-index: -1;
+            transform: scaleX(1.1) scaleY(1.3) translate(-3px,-3px);
+            transition: transform 0.3s, opacity 0.3s;
+          }
+          &:hover::after {
+            opacity: 1;
+            transform: scaleX(1) scaleY(1) translate(-3px,-3px);
+          }
+        }
       }
     }
     @media screen and (min-width: $screen-tablet-horizontal) {
