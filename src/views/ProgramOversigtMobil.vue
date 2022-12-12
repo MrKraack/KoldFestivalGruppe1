@@ -19,16 +19,18 @@
                     <div class="program_oversigt-body row">
                         <div class="program_oversigt-content">
                             <header>
-                                <div class="col">Tid</div>
-                                <div class="col">Artist</div>
-                                <div class="col">Sted</div>
+                                <div class="col">
+                                    <p class="timeAlign">Tid</p>
+                                </div>
+                                <div class="col">
+                                   <p>Artist </p> 
+                                </div>
+                                <div class="col">
+                                   <p>Sted </p> 
+                                </div>
                             </header>
                             <div v-for="entry in festivalFriday" :key="entry._id" class="row">
-
-                                <div class="col">
-                                    <p class="concertPlayTime">{{ convertDateToTime(entry.concertTime) }}</p>
-                                </div>
-
+                                <div class="col"><p class="concertPlayTime">{{ convertDateToTime(entry.concertTime)}}</p></div>
                                 <div class="col"><p> {{ entry.title }}</p></div>
                                 <div class="col"><p>{{ entry.location }}</p></div>
 
@@ -46,14 +48,20 @@
                     <div class="program_oversigt-body row">
                         <div class="program_oversigt-content">
                             <header>
-                                <div class="col">Tid</div>
-                                <div class="col">Artist</div>
-                                <div class="col">Sted</div>
+                                <div class="col">
+                                    <p class="timeAlign">Tid</p>
+                                </div>
+                                <div class="col">
+                                   <p>Artist </p> 
+                                </div>
+                                <div class="col">
+                                   <p>Sted </p> 
+                                </div>
                             </header>
                             <div v-for="entry in festivalSaturday" :key="entry._id" class="row">
-                                <div class="col">{{ convertDateToTime(entry.concertTime) }}</div>
-                                <div class="col">{{ entry.title }}</div>
-                                <div class="col">{{ entry.location }}</div>
+                                <div class="col"><p class="concertPlayTime">{{ convertDateToTime(entry.concertTime)}}</p></div>
+                                <div class="col"><p> {{ entry.title }}</p></div>
+                                <div class="col"><p>{{ entry.location }}</p></div>
                             </div>
                         </div>
                     </div>
@@ -131,7 +139,7 @@ export default {
                         if (dayFromDate == "Fri") {
                             this.festivalFriday.push(festivalEntry[i]);
 
-                        } else if (dayFromDate == "Sat") {
+                        } else if (dayFromDate == "Sat" | dayFromDate == "Sun") {
                             this.festivalSaturday.push(festivalEntry[i]);
                         }
                         //Sort the array by concert time
@@ -182,56 +190,68 @@ export default {
 </script>
   
 <style lang="scss" scoped>
-.container {
-    background-color: $bg-color;
+//PC View
 
-    .containerHeader {
+
+//skift ved 450px width
+
+//Mobil
+@media screen and (min-width:320px) and (max-width: 834px){
+   
+    .container {
+        background-color: $bg-color;
+
+        .containerHeader {
         color: $neon-orange;
-
-
+        
+        
         h1 {
             text-shadow: 0px 0px 4px $neon-orange;
             -webkit-text-stroke: 0.5px white;
             -webkit-text-fill-color: $bg-color;
         }
     }
-
+    
     .sectionContainer {
+        display: flex;
         flex-direction: column;
-        margin: 10px;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-right: 10%;
+        margin-left: 10%;
         border: 2px solid $neon-orange;
         box-shadow: 0px 0px 10px $neon-orange;
         border-radius: 5px;
-
+        
         .boxHeader {
             margin: 0px;
             background-color: $bg-color;
             color: $neon-orange;
-
+            
             h2 {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 60px;
                 margin: 0px;
-
+                
             }
-
+            
         }
-
+        
         .program_oversigt-body {
             padding: 0;
             max-height: 800px;
             overflow: hidden;
             transition: max-height 0.3s ease-in-out;
-
+            
             .program_oversigt-content {
                 display: table;
                 width: 100%;
                 text-align: center;
                 background-color: $bg-color;
                 color: white;
-
+                
                 header {
                     display: table-row;
 
@@ -242,10 +262,10 @@ export default {
                     }
 
                 }
-
                 .row {
                     display: table-row;
-
+                    
+                    
                     .col {
                         display: table-cell;
                         text-align: left;
@@ -254,16 +274,17 @@ export default {
                         width: 33%;
                         vertical-align: middle;
                         initial-letter: left;
-                            p {
-                                margin: 0px;
+                        font-size: 12px;
+                        p {
+                            margin: 0px;
                             }
                             .concertPlayTime{
                                 text-align: center;
                             }
-                        
+                            
+                        }
                     }
-                }
-
+                    
                 .row:last-child {
                     div {
                         border-bottom: 0px;
@@ -271,12 +292,12 @@ export default {
                 }
             }
         }
-
+        
         .is-closed .program_oversigt-body {
             max-height: 0px;
-
+            
         }
-
+        
         .is-active .boxHeader {
             color: white;
             max-height: fit-content;
@@ -285,5 +306,205 @@ export default {
         }
     }
 }
+}
+//Ipad vertical
+@media screen and (min-width: 834px ){
+    .festivalProgram{
+        background-color: $bg-color;
+        display: flex;
+        flex-direction: column;
+
+        .sectionContainer {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-right: 10%;
+        margin-left: 10%;
+        border: 2px solid $neon-orange;
+        box-shadow: 0px 0px 10px $neon-orange;
+        border-radius: 5px;
+        .boxHeader {
+            margin: 0px;
+            background-color: $neon-orange;
+            color: white;
+            
+            h2 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 60px;
+                margin: 0px;
+                
+            }
+            
+        }
+        .program_oversigt{
+            width: 100%;
+
+            .program_oversigt-content {
+                display: table;
+                width: 100%;
+                text-align: center;
+                background-color: $bg-color;
+                color: white;
+                
+                header {
+                    display: table-row;
+                    
+                    div {
+                        border-bottom: 4px solid $neon-orange;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        display: table-cell;
+                        font-weight: bold;
+                        text-align: left;
+                        p{
+                            transform: translateX(45%);
+                        }
+                        .timeAlign{
+                            transform: translateX(0%);
+                            text-align: center;
+                        }
+                    }
+                    
+                }
+                .row {
+                    display: table-row;
+                    text-align: left;
+                    
+                    .col {
+                        display: table-cell;
+                        border-bottom: 2px solid $neon-orange;
+                        
+                        width: 33%;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        vertical-align: middle;
+                        
+                        
+                        p {
+                            width: 50%;
+                            margin: 0px;
+                            transform: translateX(70%);
+                        }
+                        .concertPlayTime{
+                            width: 100%;
+                            transform: translateX(0%);
+                            text-align: center;
+
+                        }
+                        
+                        
+                    }
+                }
+                }
+            }
+            
+        }
+    }
+}
+//Ipad Horizontal
+@media screen and (min-width: 1194px ){
+    .festivalProgram{
+        background-color: $bg-color;
+        display: flex;
+        flex-direction: column;
+
+        .sectionContainer {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-right: 10%;
+        margin-left: 10%;
+        border: 2px solid $neon-orange;
+        box-shadow: 0px 0px 10px $neon-orange;
+        border-radius: 5px;
+        .boxHeader {
+            margin: 0px;
+            background-color: $neon-orange;
+            color: white;
+            
+            h2 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 60px;
+                margin: 0px;
+                
+            }
+            
+        }
+        .program_oversigt{
+            width: 100%;
+
+            .program_oversigt-content {
+                display: table;
+                width: 100%;
+                text-align: center;
+                background-color: $bg-color;
+                color: white;
+                
+                header {
+                    display: table-row;
+                    
+                    div {
+                        border-bottom: 4px solid $neon-orange;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        display: table-cell;
+                        font-weight: bold;
+                        text-align: left;
+                        p{
+                            transform: translateX(45%);
+                        }
+                        .timeAlign{
+                            transform: translateX(0%);
+                            text-align: center;
+                        }
+                    }
+                    
+                }
+                .row {
+                    display: table-row;
+                    text-align: left;
+                    
+                    .col {
+                        display: table-cell;
+                        border-bottom: 2px solid $neon-orange;
+                        
+                        width: 33%;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        vertical-align: middle;
+                        
+                        
+                        p {
+                            width: 50%;
+                            margin: 0px;
+                            transform: translateX(70%);
+                        }
+                        .concertPlayTime{
+                            width: 100%;
+                            transform: translateX(0%);
+                            text-align: center;
+
+                        }
+                        
+                        
+                    }
+                }
+                }
+            }
+            
+        }
+    }
+}
+
+//Desktop
+@media screen and (min-width: 1512px ){
+
+}
+
 </style>
-    
