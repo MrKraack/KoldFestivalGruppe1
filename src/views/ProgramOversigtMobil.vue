@@ -196,7 +196,7 @@ export default {
 //skift ved 450px width
 
 //Mobil
-@media screen and (min-width:320px) and (max-width: 834px){
+@media screen and (max-width: 834px){
    
     .container {
         background-color: $bg-color;
@@ -398,71 +398,48 @@ export default {
                         
                     }
                 }
+                .row:last-child {
+                    div {
+                        border-bottom: 0px;
+                    }
+                }
                 }
             }
             
         }
     }
 }
-//Ipad Horizontal
+//Ipad Horizontal, But content stays the same as Ipad Vertical
 @media screen and (min-width: 1194px ){
+    
+}
+
+//Desktop
+@media screen and (min-width: 1512px ){
     .festivalProgram{
-        background-color: $bg-color;
-        display: flex;
-        flex-direction: column;
+        flex-direction: row;
 
         .sectionContainer {
         display: flex;
         flex-direction: row;
-        margin-top: 1%;
-        margin-bottom: 1%;
-        margin-right: 10%;
-        margin-left: 10%;
-        border: 2px solid $neon-orange;
-        box-shadow: 0px 0px 10px $neon-orange;
-        border-radius: 5px;
-        .boxHeader {
-            margin: 0px;
-            background-color: $neon-orange;
-            color: white;
-            
-            h2 {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 60px;
-                margin: 0px;
-                
-            }
-            
-        }
+        width: 100%;
+        margin-right: 5%;
+        margin-left: 5%;
+        
+        
         .program_oversigt{
             width: 100%;
 
             .program_oversigt-content {
-                display: table;
-                width: 100%;
-                text-align: center;
-                background-color: $bg-color;
-                color: white;
                 
                 header {
-                    display: table-row;
                     
                     div {
-                        border-bottom: 4px solid $neon-orange;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                        display: table-cell;
-                        font-weight: bold;
-                        text-align: left;
+                        
                         p{
-                            transform: translateX(45%);
+                            transform: translateX(40%);
                         }
-                        .timeAlign{
-                            transform: translateX(0%);
-                            text-align: center;
-                        }
+                        
                     }
                     
                 }
@@ -470,29 +447,10 @@ export default {
                     display: table-row;
                     text-align: left;
                     
-                    .col {
-                        display: table-cell;
-                        border-bottom: 2px solid $neon-orange;
-                        
-                        width: 33%;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                        vertical-align: middle;
-                        
-                        
-                        p {
-                            width: 50%;
-                            margin: 0px;
-                            transform: translateX(70%);
-                        }
-                        .concertPlayTime{
-                            width: 100%;
-                            transform: translateX(0%);
-                            text-align: center;
-
-                        }
-                        
-                        
+                }
+                .row:last-child {
+                    div {
+                        border-bottom: 0px;
                     }
                 }
                 }
@@ -500,10 +458,7 @@ export default {
             
         }
     }
-}
 
-//Desktop
-@media screen and (min-width: 1512px ){
 
 }
 
