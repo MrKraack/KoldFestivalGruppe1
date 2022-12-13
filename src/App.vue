@@ -5,6 +5,7 @@
     <artist-view/>
     <program-oversigt-mobil/>
     <billet-typer/>
+    <festival-info/>
     <footer-info/>
   </main>
 </template>
@@ -16,6 +17,7 @@ import HeroSection from "@/views/HeroSection";
 import ArtistView from "@/views/ArtistView";
 import ProgramOversigtMobil from "@/views/ProgramOversigtMobil";
 import BilletTyper from "@/views/BilletTyper";
+import FestivalInfo from "@/views/FestivalInfo";
 import FooterInfo from "@/views/FooterInfo";
 import sanity from "./client";
 import {computed} from 'vue'
@@ -34,6 +36,7 @@ export default {
     ArtistView,
     ProgramOversigtMobil,
     BilletTyper,
+    FestivalInfo,
     FooterInfo
   },
   data() {

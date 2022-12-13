@@ -11,11 +11,12 @@ import post from './post'
 import author from './author'
 import billettype from './billettype'
 import footer from './footer'
-import info from './info'
-import testing from './testing'
 import faq from './faq'
 import sustain from './sustain'
 import info from './info'
+import metaData from "./metaData";
+import programOversigtEntry from "./programOversigtEntry";
+import artist from "./artist"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -29,7 +30,7 @@ export default createSchema({
     post,
     author,
     category,
-    programoversigtentry,
+    programOversigtEntry,
     metaData,
     artist,
     billettype,
