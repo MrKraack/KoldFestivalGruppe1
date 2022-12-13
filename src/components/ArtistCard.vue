@@ -6,7 +6,7 @@
         <h3>{{ name }}</h3>
         <p>{{ day }} kl. {{ hour }}:{{ minute }}</p>
       <section class="location">
-        <img src="../assets/location.png">
+        <img src="../assets/location.png" alt="location logo">
         <p> {{ location }}</p>
       </section>
     </section>

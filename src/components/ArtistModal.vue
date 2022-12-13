@@ -1,3 +1,6 @@
+<!--
+Inspiration og hjælp fra https://vuejsexamples.com/build-a-custom-modal-component-in-vue-js/
+-->
 <template>
   <div class="modal-overlay" @click="$emit('close-modal')">
     <div class="modal" @click.stop>
