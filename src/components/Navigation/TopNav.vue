@@ -1,5 +1,6 @@
 <template>
-  <aside v-click-outside-element="clickedOutside"  class="top-nav">
+  <aside  class="top-nav">
+    <div :class="navigationActive ? 'navigation-overlay--active' : 'navigation-overlay--hidden'" @click="clickedOutside"></div>
     <div class="top-nav__wrapper">
   <button class="top-nav__buy-now-button top-nav__buy-now-button--desktop-button">
     <a target="blank" href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/">
@@ -7,10 +8,10 @@
     </a>
     <logo-small class="small-logo"/>
   </button>
-  <hamburger-menu class="top-nav__hamburger" :active="navigationActive && !outsideClickDetected" @toggle-menu="toggleNavigation"/>
+  <hamburger-menu class="top-nav__hamburger" :active="navigationActive" @toggle-menu="toggleNavigation"/>
     <desktop-navigation class="top-nav__desktop-navigation"/>
     </div>
-  <mobile-navigation   class="top-nav__mobile-navigation" :active="navigationActive && !outsideClickDetected"/>
+  <mobile-navigation   class="top-nav__mobile-navigation" :active="navigationActive"/>
   </aside>
 </template>
 
@@ -30,20 +31,16 @@ export default {
   },
   data() {
     return {
-      navigationActive: false,
-      outsideClickDetected: false
+      navigationActive: false
     }
   },
   methods: {
     clickedOutside() {
-      if (this.navigationActive === false) return
-      this.outsideClickDetected = true
+      if (!this.navigationActive) return
+      this.navigationActive = !this.navigationActive
     },
     toggleNavigation() {
       this.navigationActive = !this.navigationActive
-      if (this.navigationActive === false) {
-        this.outsideClickDetected = false
-      }
     }
   }
 }
@@ -87,6 +84,20 @@ export default {
     &__desktop-navigation {
       display: none;
     }
+  }
+
+  .navigation-overlay--active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  .navigation-overlay--hidden {
+    display: none;
   }
     @media screen and (min-width: $screen-tablet-vertical) {
       .top-nav {

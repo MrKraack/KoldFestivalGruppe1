@@ -1,28 +1,28 @@
 <template>
   <section class="hero-section">
-    <video playsinline autoplay muted loop :poster='require("@/assets/images/mockup-backround.png")' class="hero-section__video-background" >>
+    <video playsinline autoplay muted loop :poster='require("@/assets/images/mockup-background.png")' class="hero-section__video-background" >>
     <h2>hello</h2>
-      <source :src='require("@/assets/video/background-video.mp4")' type='video/mp4'>
+      <source :src='url' type='video/mp4'>
     </video>
     <div class="hero-section__main-logo">
       <img src="@/assets/images/logo-hero.png" alt="Festival's Logo">
-      <p class="event-date">2. - 3. februar</p>
+      <p class="event-date">{{eventDate}}</p>
     </div>
     <div class="hero-section__social-links">
-      <a href="https://www.instagram.com/koldfestival/?hl=da" target="blank">
+      <a :href="instagramUrlHref" target="blank">
         <instagram-icon/>
       </a>
-      <a href="https://www.facebook.com/koldfestival" target="blank">
+      <a :href="facebookUrlHref" target="blank">
         <facebook-icon/>
       </a>
     </div>
     <div class="hero-section__ice-overlay overlay-top">
-      <img class="overlay-mobile" src="@/assets/images/ice-overlay-mobile.png">
-      <img class="overlay-desktop" src="@/assets/images/ice-overlay-desktop.png">
+      <img class="overlay-mobile" src="@/assets/images/ice-overlay-mobile.png" alt="">
+      <img class="overlay-desktop" src="@/assets/images/ice-overlay-desktop.png" alt="">
     </div>
     <div class="hero-section__ice-overlay overlay-bottom">
-      <img class="overlay-mobile" src="@/assets/images/ice-overlay-mobile.png">
-      <img class="overlay-desktop" src="@/assets/images/ice-overlay-desktop.png">
+      <img class="overlay-mobile" src="@/assets/images/ice-overlay-mobile.png" alt="">
+      <img class="overlay-desktop" src="@/assets/images/ice-overlay-desktop.png" alt="">
     </div>
   </section>
 </template>
@@ -36,7 +36,16 @@ export default {
   components: {
     FacebookIcon,
     InstagramIcon
-  }
+  },
+  data() {
+    return {
+      facebookUrlHref: this.facebookUrl,
+      instagramUrlHref: this.instagramUrl,
+      eventDate: this.festivalDate,
+      url: "https://ik.imagekit.io/hra0dn2xj/kold-festival.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1670913041692"
+    }
+  },
+  inject: ['facebookUrl', 'instagramUrl', 'festivalDate']
 }
 </script>
 
