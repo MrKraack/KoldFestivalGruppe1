@@ -9,6 +9,7 @@ import blockContent from './blockContent'
 import category from './category'
 import post from './post'
 import author from './author'
+import programoversigtentry from './programOversigtEntry'
 import artist from './artist'
 import metaData from "./metaData";
 
@@ -24,6 +25,7 @@ export default createSchema({
     post,
     author,
     category,
+    programoversigtentry,
     metaData,
     artist,
 
