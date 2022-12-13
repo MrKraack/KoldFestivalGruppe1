@@ -3,38 +3,25 @@
   <main>
     <hero-section id="home"/>
     <artist-view/>
-<<<<<<< HEAD
-=======
     <program-oversigt-mobil/>
->>>>>>> ProgramOversigt
     <div class="placeholder">
     </div>
   </main>
 </template>
 
-<<<<<<< HEAD
+
 <script>
 import TopNav from "@/components/Navigation/TopNav";
 import HeroSection from "@/views/HeroSection";
 import ArtistView from "@/views/ArtistView";
-=======
-<script>ß
-import TopNav from "@/components/Navigation/TopNav";
-import HeroSection from "@/views/HeroSection";
-import ArtistView from "@/views/ArtistView";
 import ProgramOversigtMobil from "@/views/ProgramOversigtMobil";
->>>>>>> ProgramOversigt
 import sanity from "./client";
 import {computed} from 'vue'
 
 const query = `*[_type == "metaData"]{
   festivalDate,
   instagramUrl,
-<<<<<<< HEAD
-  facebookUrl
-=======
   facebookUrl,
->>>>>>> ProgramOversigt
 }[0]`;
 
 export default {
@@ -42,12 +29,8 @@ export default {
   components: {
     TopNav,
     HeroSection,
-<<<<<<< HEAD
-    ArtistView
-=======
     ArtistView,
     ProgramOversigtMobil
->>>>>>> ProgramOversigt
   },
   data() {
     return {
