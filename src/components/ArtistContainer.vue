@@ -1,3 +1,6 @@
+<!--
+Inspiration og hjælp til modal fra https://vuejsexamples.com/build-a-custom-modal-component-in-vue-js/
+-->
 <template>
   <div>
       <div class="days">

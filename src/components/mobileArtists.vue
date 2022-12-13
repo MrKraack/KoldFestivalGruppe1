@@ -1,3 +1,10 @@
+<!--
+Dette komponent er lavet med npm package 'Swiper', hvor dokumentationen dertil og demos er brugt som inspiration.
+Se mere på: https://swiperjs.com/vue
+-->
+<!--
+Inspiration og hjælp til modal fra https://vuejsexamples.com/build-a-custom-modal-component-in-vue-js/
+-->
 <template>
   <div class="container">
     <swiper
@@ -132,6 +139,4 @@ export default {
     overflow: visible;
   }
 }
-
-
 </style>
