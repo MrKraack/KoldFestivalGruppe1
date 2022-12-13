@@ -1,7 +1,8 @@
 <template>
  <!-- imports child component -->
+      <section-header :color="color" :first-heading="firstHeading" :second-heading="secondHeading"/>
     <div class="ticket__container">
-        <comp-billet-type 
+        <comp-billet-type
         v-for="(billetType, index) in billetTypes" 
         :key="index"
         :title="billetType.dayName"
@@ -18,6 +19,7 @@ import sanity from "../client";
 
 // imports child component
 import CompBilletType from "@/components/CompBilletType.vue";
+import SectionHeader from "@/components/SectionHeader";
 
 // objects from sanity schema
 const query = `*[_type == "billetType"]{
@@ -30,13 +32,16 @@ const query = `*[_type == "billetType"]{
     name: 'BilletTyper',
     components: {
         CompBilletType,
-        
+        SectionHeader
     },
     // holds data from sanity in array
     data() {
         return {
             loading: true,
             billetTypes: [],
+          color: 'pink',
+          firstHeading: 'billet',
+          secondHeading: 'typer',
         }
     },
 

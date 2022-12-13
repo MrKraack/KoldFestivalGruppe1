@@ -3,7 +3,7 @@
   <main>
     <hero-section id="home"/>
     <artist-view/>
-    <program-oversigt-mobil/>
+    <program-oversigt/>
     <billet-typer/>
     <festival-info/>
     <footer-info/>
@@ -15,7 +15,7 @@
 import TopNav from "@/components/Navigation/TopNav";
 import HeroSection from "@/views/HeroSection";
 import ArtistView from "@/views/ArtistView";
-import ProgramOversigtMobil from "@/views/ProgramOversigtMobil";
+import ProgramOversigt from "@/views/ProgramOversigt";
 import BilletTyper from "@/views/BilletTyper";
 import FestivalInfo from "@/views/FestivalInfo";
 import FooterInfo from "@/views/FooterInfo";
@@ -34,7 +34,7 @@ export default {
     TopNav,
     HeroSection,
     ArtistView,
-    ProgramOversigtMobil,
+    ProgramOversigt,
     BilletTyper,
     FestivalInfo,
     FooterInfo

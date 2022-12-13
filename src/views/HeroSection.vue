@@ -81,6 +81,7 @@ export default {
       }
       .event-date {
         text-transform: uppercase;
+        text-align: center;
         font-size: 19px;
         color: white;
         margin: 0;

@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/program-oversigt-mobil',
     name: 'program-oversigt-mobil',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ProgramOversigtMobil.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/ProgramOversigt.vue')
   },
   {
     path: '/billet-typer',

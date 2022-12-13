@@ -1,4 +1,5 @@
 <template>
+      <section-header :color="color" :first-heading="firstHeading" :second-heading="secondHeading"/>
     <div>
         <!-- Viser componentet -->
         <InfoFestivalVue></InfoFestivalVue>
@@ -12,13 +13,23 @@
 import InfoFestivalVue from '@/components/InfoFestival.vue';
 import SustainbilityInfo from '@/components/SustainbilityInfo.vue';
 import FestivalFaq from '@/components/FestivalFaq.vue'
+import SectionHeader from "@/components/SectionHeader";
+
     export default {
         // eksportere components
         components: {
             InfoFestivalVue,
             SustainbilityInfo,
-            FestivalFaq
+            FestivalFaq,
+            SectionHeader
         },
+      data() {
+          return {
+            color: 'blue',
+            firstHeading: 'festival',
+            secondHeading: 'info',
+          }
+      }
     }
 </script>
 
