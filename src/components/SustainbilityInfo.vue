@@ -62,6 +62,7 @@ const query = `*[_type == "sustain"] {
     border-radius: 20px;
     padding: 10%;
     position: relative;
+    margin: 1% 10%;
 }
 
 //ipad

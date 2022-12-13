@@ -131,6 +131,7 @@
         margin-top: 15px;
         margin-bottom: 5px;
         font-size: $text-medium;
+      text-align: left;
     }
 
     &__event {
@@ -158,6 +159,7 @@
     
     &__webavail {
         font-size: $text-large;
+      margin-bottom: 16px;
     }
 
     &__speaker {

@@ -59,6 +59,7 @@ const query = `*[_type == "faq"] {
     text-align: left;
     border-radius: 20px;
     padding: 10%;
+    margin: 1% 10%;
 }
 
 @media screen and (min-width: 620px) {

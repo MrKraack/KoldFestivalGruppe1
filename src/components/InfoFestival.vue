@@ -65,6 +65,7 @@ const query = `*[_type == "info"] {
     color:white;
     border-radius: 20px;
     padding: 10%;
+    margin: 1% 10%;
 }
 
 </style>
