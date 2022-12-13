@@ -4,7 +4,8 @@
     <router-link to="/artist">Artist</router-link> |
     <router-link to="/program-oversigt">Program Oversigt</router-link> |
     <router-link to="/billet-typer">Billet Typer</router-link> |
-    <router-link to="/festival-info">Festival Info</router-link>
+    <router-link to="/festival-info">Festival Info</router-link> |
+    <router-link to="/footer">Footer</router-link> 
   </nav>
   <router-view/>
 </template>

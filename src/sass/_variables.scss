@@ -8,6 +8,7 @@ $bg-color: #0A1E23;
 //Font sizes
 
 //mobile-sizes
+$text-xxs: 9px;
 $text-xs: 12px;
 $text-small: 15px;
 $text-medium: 16px;
@@ -16,3 +17,9 @@ $neon-title-mobile: 50px;
 $neon-title-desktop: 60px;
 $neon-undertitle-mobile: 30px;
 $neon-undertitle-desktop: 40px;
+
+//Breakpoints
+$screen-mobile: 320px;
+$screen-tablet-vertical: 834px;
+$screen-tablet-horizontal: 1194px;
+$screen-desktop: 1512px;
