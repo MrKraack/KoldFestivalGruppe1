@@ -21,7 +21,7 @@ import {computed} from 'vue'
 const query = `*[_type == "metaData"]{
   festivalDate,
   instagramUrl,
-  facebookUrl,
+  facebookUrl
 }[0]`;
 
 export default {

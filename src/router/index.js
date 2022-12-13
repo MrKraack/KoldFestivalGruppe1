@@ -25,6 +25,11 @@ const routes = [
     path: '/festival-info',
     name: 'festival-info',
     component: () => import(/* webpackChunkName: "about" */ '../views/FestivalInfo.vue')
+  },
+  {
+    path: '/footer',
+    name: 'footer',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FooterInfo.vue')
   }
 ]
 

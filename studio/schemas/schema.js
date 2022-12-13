@@ -12,6 +12,8 @@ import author from './author'
 import programoversigtentry from './programOversigtEntry'
 import artist from './artist'
 import metaData from "./metaData";
+import billettype from './billettype'
+import footer from './footer'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,7 +30,8 @@ export default createSchema({
     programoversigtentry,
     metaData,
     artist,
-
+    billettype,
+    footer,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
