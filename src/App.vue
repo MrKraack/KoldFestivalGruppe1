@@ -2,6 +2,7 @@
   <TopNav/>
   <main>
     <hero-section id="home"/>
+    <artist-view/>
     <div class="placeholder">
     </div>
   </main>
@@ -10,6 +11,7 @@
 <script>
 import TopNav from "@/components/Navigation/TopNav";
 import HeroSection from "@/views/HeroSection";
+import ArtistView from "@/views/ArtistView";
 import sanity from "./client";
 import {computed} from 'vue'
 
@@ -23,7 +25,8 @@ export default {
   name: "App",
   components: {
     TopNav,
-    HeroSection
+    HeroSection,
+    ArtistView
   },
   data() {
     return {
@@ -81,7 +84,6 @@ body {
   font-family: 'Helvetica Neue LT Std', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin: 0;
 }
