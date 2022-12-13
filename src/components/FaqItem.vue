@@ -1,8 +1,8 @@
 <template>
-    <section :class="accordianClasses">
+    <section class="infoSection" :class="accordianClasses">
         
             <div class="icon-text">
-            <i class="fi fi-rs-angle-small-right"></i>
+            <i @click="toggleAccordian" class="fi fi-rs-angle-small-right"></i>
             <p @click="toggleAccordian" class="title">{{title}}</p>
             </div>
             <p class="beskrivelse">{{beskrivelse}}</p>
@@ -48,14 +48,24 @@
         
         .icon-text {
             display: inline-flex;
-            align-items: center;
+            cursor: pointer;
+           
         }
         .title {
+            margin: 0;
             cursor: pointer;
+            text-align: top;
         }
 
         .beskrivelse {
-           // padding: 1.5rem 0 1.5rem 0;
+           font-size: $text-small;
+           
+        }
+
+        .fi {
+            font-size: 30px;
+            margin: -5px 0;
+            color: $neon-turquoise;
         }
 
         .is-closed .beskrivelse {
@@ -64,20 +74,21 @@
 
         .line {
             height: 1px;
-            width: 40rem;
+            width: 100%;
             background-color: aqua;
             margin-left: auto;
             margin-right: auto;
-        }
-        
-    // Virker ikke / bruger ikke lige nu        
-    @keyframes slidedown {
-        from {
-        transform: translateY(50%);
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
-        to {
-        transform: translateY(100%);
-        }
-        }
+        @media screen and (min-width: 620px) {
+            // ændring af linje og teksten så det står i midten.
+            .infoSection {
+                margin-left: auto;
+                margin-right: auto;
+                width: 487px;
+                
+            }
+        }    
 </style>

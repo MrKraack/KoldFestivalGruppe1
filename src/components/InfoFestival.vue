@@ -56,12 +56,15 @@ const query = `*[_type == "info"] {
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .container {
-    border: 1px solid blue;
+    border: 1px solid $neon-turquoise;
+    background-color: $bg-color;
+    font-size: $text-small;
+    text-align: left;
+    color:white;
     border-radius: 20px;
-    padding: 2rem 10rem;
-    margin: 0 5rem;
+    padding: 10%;
 }
 
 </style>

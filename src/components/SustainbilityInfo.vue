@@ -4,7 +4,9 @@
         <div class="container">
         <sustainItem v-for="(sustain,index) in sustainData" :key="index" 
         :sustainTitle="sustain.sustainTitle"
-        :sustainText="sustain.sustainText"/>
+        :sustainText="sustain.sustainText"
+        :haveImages="index === 0 ? true : false"
+        :haveLine="index === 1 ? true : false"/>
         </div>
     </div>
 </template>
@@ -52,9 +54,35 @@ const query = `*[_type == "sustain"] {
 
 <style lang="scss" scoped>
 .container {
-    border: 1px solid blue;
+    border: 1px solid $neon-turquoise;
+    background-color: $bg-color;
+    color: white;
+    font-size: $text-small;
+    text-align: left;
     border-radius: 20px;
-    padding: 2rem 10rem;
-    margin: 0 5rem;
+    padding: 10%;
+    position: relative;
+}
+
+//ipad
+@media screen and (min-width: 890px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-content: space-evenly;
+        &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 70%;
+        width: 2px;
+        background-color: $neon-turquoise;
+        left: 50%;
+        top: 17%;
+        transform: translateX(-50%);
+    }
+
+
+    }
 }
 </style>

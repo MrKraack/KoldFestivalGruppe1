@@ -52,10 +52,21 @@ const query = `*[_type == "faq"] {
 
 <style lang="scss" scoped>
 .container {
-    border: 1px solid blue;
+    border: 1px solid $neon-turquoise;
+    background-color: $bg-color;
+    color: white;
+    font-size: $text-small;
+    text-align: left;
     border-radius: 20px;
-    padding: 40px 0;
-    margin: 0 5rem;
+    padding: 10%;
+}
+
+@media screen and (min-width: 620px) {
+    .container {
+        
+    }
+
+    
 }
 
 </style>
