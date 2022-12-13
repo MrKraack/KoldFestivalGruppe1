@@ -13,13 +13,16 @@
             <!-- Container for friday -->
             <div class="sectionContainer">
                 <div class="program_oversigt" @click="toggleAccordionFriday" :class="accordionClassFriday">
+                    <!-- Header for  -->
                     <div class="boxHeader" :class="accordionClassFriday">
                         <h2>FREDAG</h2>
                     </div>
                     <div class="program_oversigt-body row">
                         <div class="program_oversigt-content">
+                            <!-- Header for each row in the table -->
                             <header>
                                 <div class="col">
+                                    <!-- Time align class is used to align time in middle of div -->
                                     <p class="timeAlign">Tid</p>
                                 </div>
                                 <div class="col">
@@ -29,10 +32,13 @@
                                    <p>Sted </p> 
                                 </div>
                             </header>
-                            <div v-for="entry in festivalFriday" :key="entry._id" class="row">
-                                <div class="col"><p class="concertPlayTime">{{ convertDateToTime(entry.concertTime)}}</p></div>
-                                <div class="col"><p> {{ entry.title }}</p></div>
-                                <div class="col"><p>{{ entry.location }}</p></div>
+                            <div v-for="artists in festivalFriday" :key="artists._id" class="row">
+                                <!-- Column for Artist playtime -->
+                                <div class="col"><p class="concertPlayTime">{{ convertDateToTime(artists.concertTime)}}</p></div>
+                                <!-- Column for Artist tile -->
+                                <div class="col"><p> {{ artists.title }}</p></div>
+                                <!-- Column for Artist concert location -->
+                                <div class="col"><p>{{ artists.location }}</p></div>
 
                             </div>
                         </div>
@@ -42,6 +48,7 @@
             <!-- Container for Saturday -->
             <div class="sectionContainer">
                 <div class="program_oversigt" @click="toggleAccordionSaturday" :class="accordionClassSaturday">
+                    <!-- Header for entire section -->
                     <div class="boxHeader" :class="accordionClassSaturday">
                         <h2>LØRDAG</h2>
                     </div>
@@ -49,6 +56,7 @@
                         <div class="program_oversigt-content">
                             <header>
                                 <div class="col">
+                                    <!-- Time align class is used to align time in middle of div -->
                                     <p class="timeAlign">Tid</p>
                                 </div>
                                 <div class="col">
@@ -58,10 +66,13 @@
                                    <p>Sted </p> 
                                 </div>
                             </header>
-                            <div v-for="entry in festivalSaturday" :key="entry._id" class="row">
-                                <div class="col"><p class="concertPlayTime">{{ convertDateToTime(entry.concertTime)}}</p></div>
-                                <div class="col"><p> {{ entry.title }}</p></div>
-                                <div class="col"><p>{{ entry.location }}</p></div>
+                            <div v-for="artists in festivalSaturday" :key="artists._id" class="row">
+                                <!-- Column for Artist playtime -->
+                                <div class="col"><p class="concertPlayTime">{{ convertDateToTime(artists.concertTime)}}</p></div>
+                                <!-- Column for Artist tile -->
+                                <div class="col"><p> {{ artists.title }}</p></div>
+                                <!-- Column for Artist concert location -->
+                                <div class="col"><p>{{ artists.location }}</p></div>
                             </div>
                         </div>
                     </div>
@@ -106,10 +117,12 @@ export default {
         this.fetchData();
     },
     methods: {
+        // Used to open and close Friday section on Mobile display
         toggleAccordionFriday() {
             this.isFridayOpen = !this.isFridayOpen;
 
         },
+         // Used to open and close Saturday section on Mobile display
         toggleAccordionSaturday() {
             this.isSaturdayOpen = !this.isSaturdayOpen;
 
@@ -125,7 +138,7 @@ export default {
 
                     // loop through the array, convert time and push to friday or saturday
                     for (let i = 0; i < festivalEntry.length; i++) {
-                        //Get the time from current entry
+                        //Get the time from current artists
                         let dateTime = festivalEntry[i].concertTime;
                         //Convert date from ISO to JS format
                         let newConvertedDate = new Date(dateTime).toString();
@@ -136,9 +149,10 @@ export default {
                         //Variable to hold what regex finds/matches
                         let dayFromDate = newConvertedDate.match(dayRegex)[0];
 
+                        // If the playtime is = to friday, than add to friday array
                         if (dayFromDate == "Fri") {
                             this.festivalFriday.push(festivalEntry[i]);
-
+                         // If the playtime is = to Saturday, than add to Saturday array
                         } else if (dayFromDate == "Sat" | dayFromDate == "Sun") {
                             this.festivalSaturday.push(festivalEntry[i]);
                         }
@@ -146,20 +160,20 @@ export default {
                         this.festivalFriday.sort(this.compare);
                         this.festivalSaturday.sort(this.compare);
                     }
-                    console.log("Friday entry");
-                    console.log(this.festivalFriday);
                     (error) => {
                         this.error = error;
                     }
                 }
             )
         },
+        //Used to convert the ISO format to Coordinated Universal Time (UTC)
         convertDateToTime(date) {
             let timeRegex = /^.{16}(.{5})/;
             let newTime = date.match(timeRegex)[1];
             return newTime;
 
         },
+        //Used to sort through the Artist array, and sort by concert play time - Function is called at the end of "FetchData"
         compare(a, b) {
             if (a.concertTime < b.concertTime) {
                 return -1;
@@ -172,12 +186,14 @@ export default {
 
     },
     computed: {
+        //Used to toggle between is-closed and is-active on section
         accordionClassFriday: function () {
             return {
                 "is-closed": this.isFridayOpen,
                 "is-active": !this.isFridayOpen,
             };
         },
+        //Used to toggle between is-closed and is-active on section
         accordionClassSaturday: function () {
             return {
                 "is-closed": this.isSaturdayOpen,
@@ -190,11 +206,6 @@ export default {
 </script>
   
 <style lang="scss" scoped>
-//PC View
-
-
-//skift ved 450px width
-
 //Mobil
 @media screen and (max-width: 834px){
    
