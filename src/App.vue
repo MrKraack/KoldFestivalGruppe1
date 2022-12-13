@@ -4,8 +4,8 @@
     <hero-section id="home"/>
     <artist-view/>
     <program-oversigt-mobil/>
-    <div class="placeholder">
-    </div>
+    <billet-typer/>
+    <footer-info/>
   </main>
 </template>
 
@@ -15,6 +15,8 @@ import TopNav from "@/components/Navigation/TopNav";
 import HeroSection from "@/views/HeroSection";
 import ArtistView from "@/views/ArtistView";
 import ProgramOversigtMobil from "@/views/ProgramOversigtMobil";
+import BilletTyper from "@/views/BilletTyper";
+import FooterInfo from "@/views/FooterInfo";
 import sanity from "./client";
 import {computed} from 'vue'
 
@@ -30,7 +32,9 @@ export default {
     TopNav,
     HeroSection,
     ArtistView,
-    ProgramOversigtMobil
+    ProgramOversigtMobil,
+    BilletTyper,
+    FooterInfo
   },
   data() {
     return {
