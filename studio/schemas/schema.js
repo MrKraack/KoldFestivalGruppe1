@@ -9,11 +9,13 @@ import blockContent from './blockContent'
 import category from './category'
 import post from './post'
 import author from './author'
-import programoversigtentry from './programOversigtEntry'
-import artist from './artist'
-import metaData from "./metaData";
 import billettype from './billettype'
 import footer from './footer'
+import info from './info'
+import testing from './testing'
+import faq from './faq'
+import sustain from './sustain'
+import info from './info'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,6 +34,11 @@ export default createSchema({
     artist,
     billettype,
     footer,
+    info,
+    faq,
+    sustain,
+    info,
+
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
