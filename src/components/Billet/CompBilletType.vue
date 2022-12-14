@@ -11,7 +11,7 @@
                 <p class="ticketbox_p_person">UNG/STUDERENDE</p>
                 <p class="ticketbox_p_age">16-25 år eller gyldigt studie ID</p>
                 <p class="ticketbox_p_price">{{discount}}</p>
-                <a href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/"><button class="ticketBox__btn">KØB BILLET <img class="ticketBox__fnug" src="../assets/KoldFnug.png" alt=""></button></a>
+                <a href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/"><button class="ticketBox__btn">KØB BILLET <img class="ticketBox__fnug" src="../../assets/images/KoldFnug.png" alt=""></button></a>
             </div>
 
             <div class="ticketBox__adult">

@@ -7,25 +7,25 @@
             Ved godt at der er mange div, men kan ikke finde bedre metoder der virker -->
             <div class="img-wrapper1">
                 <div class="img-container">
-                <img src="../assets/affaldsikoner/glas.png" alt="glas-billede">
+                <img src="../../assets/images/affaldsikoner/glas.png" alt="glas-billede">
                 <p>Glas</p>
                 </div>
                 <div class="img-container">
-                <img src="../assets/affaldsikoner/plast.png" alt="plat-billede">
+                <img src="../../assets/images/affaldsikoner/plast.png" alt="plat-billede">
                 <p>Plast</p>
                 </div>
                 <div class="img-container">
-                <img src="../assets/affaldsikoner/metal.png" alt="metal-billede">
+                <img src="../../assets/images/affaldsikoner/metal.png" alt="metal-billede">
                 <p>Metal</p>
                 </div>
             </div>
             <div class="img-wrapper2">
                 <div class="img-container">
-                <img src="../assets/affaldsikoner/madaffald.png" alt="madaffald-billede">
+                <img src="../../assets/images/affaldsikoner/madaffald.png" alt="madaffald-billede">
                 <p>Madaffald</p>
                 </div>
                 <div class="img-container">
-                <img src="../assets/affaldsikoner/restaffald.png" alt="restaffald-billede">
+                <img src="../../assets/images/affaldsikoner/restaffald.png" alt="restaffald-billede">
                 <p>Restaffald</p>
                 </div>
             </div>

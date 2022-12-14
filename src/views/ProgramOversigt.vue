@@ -81,7 +81,7 @@
     
 <script>
 import sanity from "../client";
-import SectionHeader from "@/components/SectionHeader";
+import SectionHeader from "@/components/Layout/SectionHeader";
 
 const query = `*[_type == "festivalentry"]{
       _id,

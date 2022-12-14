@@ -52,8 +52,8 @@ Inspiration og hjælp til modal fra https://vuejsexamples.com/build-a-custom-mod
 
 <script>
 import sanity from "@/client";
-import artistCard from "@/components/ArtistCard";
-import artistModal from "@/components/ArtistModal";
+import artistCard from "@/components/Artist/ArtistCard";
+import artistModal from "@/components/Artist/ArtistModal";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { EffectCoverflow, Navigation } from "swiper";
 import "swiper/css";

@@ -39,9 +39,9 @@ Inspiration og hjælp til modal fra https://vuejsexamples.com/build-a-custom-mod
 </template>
 
 <script>
-import sanity from "../client";
-import artistCard from "@/components/ArtistCard";
-import artistModal from "@/components/ArtistModal";
+import sanity from "../../client";
+import artistCard from "@/components/Artist/ArtistCard";
+import artistModal from "@/components/Artist/ArtistModal";
 import {toRaw} from "vue";
 
 const query = `*[_type == "artist"]{

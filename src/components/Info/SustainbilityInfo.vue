@@ -13,8 +13,8 @@
 
 <script>
 // Til at tilføje sanity.
-import sanity from "../client";
-import sustainItem from "../components/sustainItem.vue"
+import sanity from "../../client";
+import sustainItem from "./sustainItem.vue"
 
 // elementer jeg skal bruge fra sanity, derefter kan dataerne fetches nede i export.
 const query = `*[_type == "sustain"] {

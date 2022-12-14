@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import artistContainer from "@/components/ArtistContainer";
-import sectionHeader from "@/components/SectionHeader";
-import MobileArtists from "@/components/mobileArtists";
+import artistContainer from "@/components/Artist/ArtistContainer";
+import sectionHeader from "@/components/Layout/SectionHeader";
+import MobileArtists from "@/components/Artist/mobileArtists";
 
 export default {
       name: 'artistView',

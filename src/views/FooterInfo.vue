@@ -17,7 +17,7 @@
 import sanity from "../client";
 
 // imports child component
-import CompFooter from "@/components/CompFooter.vue";
+import CompFooter from "@/components/Footer/CompFooter.vue";
 
 // objects from sanity schema
 const query = `*[_type == "footer"]{

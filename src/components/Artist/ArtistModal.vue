@@ -10,13 +10,13 @@ Inspiration og hjælp fra https://vuejsexamples.com/build-a-custom-modal-compone
             <h3>{{artistName}}</h3>
             <p>{{ artistDay }} kl. {{ artistHour }}:{{ artistMinute }}</p>
             <section class="location">
-              <img src="../assets/location.png">
+              <img src="../../assets/images/location.png">
               <p> {{ location }}</p>
             </section>
           </section>
 
           <div class="close" @click="$emit('close-modal')">
-            <img src="../assets/close.png">
+            <img src="../../assets/images/close.png">
           </div>
       </section>
       <section class="modal-body">

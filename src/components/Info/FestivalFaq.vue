@@ -11,8 +11,8 @@
 
 <script>
 // Til at tilføje sanity.
-import sanity from "../client";
-import faqItem from "../components/FaqItem.vue"
+import sanity from "../../client";
+import faqItem from "./FaqItem.vue"
 
 // elementer jeg skal bruge fra sanity - Kig på faq.js
 const query = `*[_type == "faq"] {

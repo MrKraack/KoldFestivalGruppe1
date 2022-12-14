@@ -11,8 +11,8 @@
 
 <script>
 // Til at tilføje sanity.
-import sanity from "../client";
-import infoItem from "../components/infoItem.vue"
+import sanity from "../../client";
+import infoItem from "./infoItem.vue"
 
 // elementer jeg skal bruge fra sanity
 const query = `*[_type == "info"] {

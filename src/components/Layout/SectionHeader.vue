@@ -23,10 +23,10 @@ export default {
   },
   methods: {
     resolveSrc(color) {
-      return require(`../assets/hands/${color}handsweb.png`)
+      return require(`@/assets/images/hands/${color}handsweb.png`)
     },
     resolveSrcMobile(color) {
-      return require(`../assets/hands/${color}hands.png`)
+      return require(`@/assets/images/hands/${color}hands.png`)
     },
   },
   computed: {

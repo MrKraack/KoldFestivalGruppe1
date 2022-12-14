@@ -18,8 +18,8 @@
 import sanity from "../client";
 
 // imports child component
-import CompBilletType from "@/components/CompBilletType.vue";
-import SectionHeader from "@/components/SectionHeader";
+import CompBilletType from "@/components/Billet/CompBilletType.vue";
+import SectionHeader from "@/components/Layout/SectionHeader";
 
 // objects from sanity schema
 const query = `*[_type == "billetType"]{

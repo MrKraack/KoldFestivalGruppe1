@@ -10,10 +10,10 @@
 
 <script>
 // importer fra Views (siden vises ikke) til components (Hvor siden vises)
-import InfoFestivalVue from '@/components/InfoFestival.vue';
-import SustainbilityInfo from '@/components/SustainbilityInfo.vue';
-import FestivalFaq from '@/components/FestivalFaq.vue'
-import SectionHeader from "@/components/SectionHeader";
+import InfoFestivalVue from '@/components/Info/InfoFestival.vue';
+import SustainbilityInfo from '@/components/Info/SustainbilityInfo.vue';
+import FestivalFaq from '@/components/Info/FestivalFaq.vue'
+import SectionHeader from "@/components/Layout/SectionHeader";
 
     export default {
         // eksportere components

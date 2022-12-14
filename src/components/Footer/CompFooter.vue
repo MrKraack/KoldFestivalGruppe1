@@ -3,13 +3,13 @@
         <div class="footer__background">
         <div class="footer__sponsLogo">
         <div class="footer__sponsor">{{sponsors}}</div>
-        <img class="footer__logo" src="../assets/blueKoldLogo.png" alt="">
+        <img class="footer__logo" src="../../assets/images/blueKoldLogo.png" alt="">
         <div class="footer__sponsor">{{sponsors}}</div>
         </div>
         
         <div class="footer__social">
-            <a href="https://www.facebook.com/koldfestival"><img class="footer__socialicon" src="../assets/facebookicon.png" alt=""></a>
-           <a href="https://www.instagram.com/koldfestival/?next=%2F"><img class="footer__socialicon" src="../assets/instagramicon.png" alt=""></a>
+            <a href="https://www.facebook.com/koldfestival"><img class="footer__socialicon" src="../../assets/images/facebookicon.png" alt=""></a>
+           <a href="https://www.instagram.com/koldfestival/?next=%2F"><img class="footer__socialicon" src="../../assets/images/instagramicon.png" alt=""></a>
         </div>
 
         <section class="footer__info">
@@ -37,10 +37,10 @@
             <section class="footer__box">
                 <ul class="footer__webtext">
                 <h4 class="footer__webavail">Webtilgængelighed</h4>
-                <li class="footer__signs footer-wrapper"> <img class="footer__icons" src="../assets/handssign.png" alt=""> Adgang med tegn</li>
-                <li class="footer__read footer-wrapper"> <a class="footer-wrapper" href="https://www.adgangforalle.dk/"> <img class="footer__icons" src="../assets/speaker.png" alt=""> Få teksten læst op</a></li>
-                <li class="footer__declare footer-wrapper"> <a class="footer-wrapper" href="https://www.was.digst.dk/musik-kolding-dk"> <img class="footer__icons" src="../assets/contract.png" alt=""> Tilgængelighedserklæring</a></li>
-                <li class="footer__feedback footer-wrapper"> <a class="footer-wrapper" href="https://musik.kolding.dk/was-feedback/"> <img class="footer__icons" src="../assets/comment.png" alt=""> Giv os feedback</a></li>
+                <li class="footer__signs footer-wrapper"> <img class="footer__icons" src="../../assets/images/handssign.png" alt=""> Adgang med tegn</li>
+                <li class="footer__read footer-wrapper"> <a class="footer-wrapper" href="https://www.adgangforalle.dk/"> <img class="footer__icons" src="../../assets/images/speaker.png" alt=""> Få teksten læst op</a></li>
+                <li class="footer__declare footer-wrapper"> <a class="footer-wrapper" href="https://www.was.digst.dk/musik-kolding-dk"> <img class="footer__icons" src="../../assets/images/contract.png" alt=""> Tilgængelighedserklæring</a></li>
+                <li class="footer__feedback footer-wrapper"> <a class="footer-wrapper" href="https://musik.kolding.dk/was-feedback/"> <img class="footer__icons" src="../../assets/images/comment.png" alt=""> Giv os feedback</a></li>
                 </ul>
             </section>
 
