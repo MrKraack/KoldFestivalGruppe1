@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <img :src="resolveSrc(this.color)" alt="hands" class="notMobile">
-    <img :src="resolveSrcMobile(this.color)" alt="hands" class="mobile">
+  <div class="section-header">
+    <img v-if="haveHands" :src="resolveSrc(this.color)" alt="hands" class="notMobile">
+    <img v-if="haveHands" :src="resolveSrcMobile(this.color)" alt="hands" class="mobile">
     <section class="heading">
       <h3 :style="{textShadow: `0 0 5px #fff,
                   0 0 10px #fff,
@@ -20,6 +20,10 @@ export default {
     color: String,
     firstHeading: String,
     secondHeading: String,
+    haveHands: {
+      type: Boolean,
+      default: true
+    }
   },
   methods: {
     resolveSrc(color) {
@@ -53,11 +57,17 @@ img {
   width: 100vw;
   height: auto;
 }
+
+.section-header {
+  margin: 2rem 0;
+}
+
 .heading {
   text-align: center;
   font-size: $neon-undertitle-desktop;
   text-transform: uppercase;
   background: $bg-color;
+  margin: 2rem 0;
   h4 {
    margin-top: -1.5rem;
   }
@@ -65,6 +75,7 @@ img {
     margin: 0;
     color: $bg-color;
     text-align: center;
+    z-index: 2;
   }
 }
 
@@ -75,7 +86,7 @@ img {
   display: block;
 }
 
-$screen-mobile: 390px;
+$screen-mobile: 450px;
 @media screen and (max-width: $screen-mobile) {
   .mobile {
     display: block;

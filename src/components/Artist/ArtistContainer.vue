@@ -2,7 +2,7 @@
 Inspiration og hjælp til modal fra https://vuejsexamples.com/build-a-custom-modal-component-in-vue-js/
 -->
 <template>
-  <div>
+  <div class="container">
       <div class="days">
         <section>
           <div class="friday"/>
@@ -103,6 +103,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.container {
+  margin: 0 10%;
+  color: white;
+}
+
 .days {
   @include flex-row;
   justify-content: flex-start;

@@ -56,8 +56,6 @@ const query = `*[_type == "billetType"]{
         (billetType) => {
           this.loading = false;
           this.billetTypes = billetType;
-        
-          console.log(billetType);
         },
         (error) => {
           this.error = error;

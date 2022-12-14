@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="info-festival">
         <h3>Info om festival</h3>
         <div class="container">
         <infoItem v-for="(info,index) in infoData" :key="index" 
@@ -57,6 +57,13 @@ const query = `*[_type == "info"] {
 </script>
 
 <style lang="scss" scoped>
+.info-festival {
+  h3 {
+    font-size: 30px;
+    color: $neon-turquoise;
+    text-shadow: 0 0 6px $neon-turquoise;
+}
+}
 .container {
     border: 1px solid $neon-turquoise;
     background-color: $bg-color;
@@ -67,5 +74,6 @@ const query = `*[_type == "info"] {
     padding: 10%;
     margin: 1% 10%;
 }
+
 
 </style>

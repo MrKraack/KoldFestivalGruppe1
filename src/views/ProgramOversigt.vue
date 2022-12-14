@@ -138,7 +138,6 @@ export default {
                 (festivalEntry) => {
                     this.loading = false;
                     this.festivalEntry = festivalEntry;
-                    console.log(festivalEntry)
 
                     // loop through the array, convert time and push to friday or saturday
                     for (let i = 0; i < festivalEntry.length; i++) {

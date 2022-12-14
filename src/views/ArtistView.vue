@@ -4,6 +4,7 @@
           :first-heading="firstHeading"
           :second-heading="secondHeading"
           :color="color"
+          :have-hands="false"
       ></section-header>
       <mobile-artists class="mobile"/>
       <artist-container class="notMobile"></artist-container>

@@ -44,15 +44,12 @@ const query = `*[_type == "footer"]{
     // fetches data from sanity
     methods: {
     fetchData() {
-      console.log("is running");
       this.error = this.footerInfos = null;
       this.loading = true;
       sanity.fetch(query).then(
         (footer) => {
           this.loading = false;
           this.footerInfos = footer;
-        
-          console.log(footer);
         },
         (error) => {
           this.error = error;

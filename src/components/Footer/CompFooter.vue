@@ -19,7 +19,7 @@
             
             <div class="footer__infocontainer">
             <div class="footer__location">
-                <p class="footer__street">jens Holms Vej 5</p>
+                <p class="footer__street">Jens Holms Vej 5</p>
                 <p class="footer__city">6000 Kolding</p>
                 <p class="footer__ticket">Billetter: Se under <br> billet typer</p>
             </div>

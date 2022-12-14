@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="festival-faq">
         <h3>FAQ</h3>
         <div class="container">
         <faq-item v-for="(faq,index) in faqData" :key="index" 
@@ -51,6 +51,15 @@ const query = `*[_type == "faq"] {
 </script>
 
 <style lang="scss" scoped>
+
+.festival-faq {
+  h3 {
+    font-size: 30px;
+    color: $neon-turquoise;
+    text-shadow: 0 0 6px $neon-turquoise;
+  }
+}
+
 .container {
     border: 1px solid $neon-turquoise;
     background-color: $bg-color;
@@ -60,14 +69,6 @@ const query = `*[_type == "faq"] {
     border-radius: 20px;
     padding: 10%;
     margin: 1% 10%;
-}
-
-@media screen and (min-width: 620px) {
-    .container {
-        
-    }
-
-    
 }
 
 </style>

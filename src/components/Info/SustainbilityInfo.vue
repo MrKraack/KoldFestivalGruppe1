@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="sustainability-info">
         <h3>Bæredygtig tiltag</h3>
         <div class="container">
         <sustainItem v-for="(sustain,index) in sustainData" :key="index" 
@@ -53,6 +53,15 @@ const query = `*[_type == "sustain"] {
 </script>
 
 <style lang="scss" scoped>
+
+.sustainability-info {
+  h3 {
+    font-size: 30px;
+    color: $neon-turquoise;
+    text-shadow: 0 0 6px $neon-turquoise;
+  }
+}
+
 .container {
     border: 1px solid $neon-turquoise;
     background-color: $bg-color;

@@ -24,6 +24,8 @@
       <img class="overlay-mobile" src="@/assets/images/ice-overlay-mobile.png" alt="">
       <img class="overlay-desktop" src="@/assets/images/ice-overlay-desktop.png" alt="">
     </div>
+    <img :src="resolveSrc(this.handsColor)" alt="hands" class="notMobile">
+    <img :src="resolveSrcMobile(this.handsColor)" alt="hands" class="mobile">
   </section>
 </template>
 
@@ -42,8 +44,17 @@ export default {
       facebookUrlHref: this.facebookUrl,
       instagramUrlHref: this.instagramUrl,
       eventDate: this.festivalDate,
+      handsColor: 'green',
       url: "https://ik.imagekit.io/hra0dn2xj/kold-festival.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1670913041692"
     }
+  },
+  methods: {
+    resolveSrc(color) {
+      return require(`@/assets/images/hands/${color}handsweb.png`)
+    },
+    resolveSrcMobile(color) {
+      return require(`@/assets/images/hands/${color}hands.png`)
+    },
   },
   inject: ['facebookUrl', 'instagramUrl', 'festivalDate']
 }
@@ -54,6 +65,7 @@ export default {
   .hero-section {
     height: 100vh;
     width: 100vw;
+    margin-bottom: 20px;
     overflow: hidden;
     position: relative;
     &__video-background {
@@ -135,6 +147,31 @@ export default {
       }
     }
   }
+  .mobile {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+  }
+  .notMobile {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+  }
+
+  $screen-mobile: 450px;
+  @media screen and (min-width: $screen-mobile) {
+    .mobile {
+      display: none;
+    }
+    .notMobile {
+      display: block;
+    }
+  }
+
 
 
 </style>

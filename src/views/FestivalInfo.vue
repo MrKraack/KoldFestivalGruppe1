@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="festival-info">
       <section-header :color="color" :first-heading="firstHeading" :second-heading="secondHeading"/>
-    <div>
+    <div class="festival-info__content-wrapper">
         <!-- Viser componentet -->
-        <InfoFestivalVue></InfoFestivalVue>
+        <InfoFestival></InfoFestival>
         <FestivalFaq></FestivalFaq>
         <SustainbilityInfo></SustainbilityInfo>
     </div>
@@ -12,7 +12,7 @@
 
 <script>
 // importer fra Views (siden vises ikke) til components (Hvor siden vises)
-import InfoFestivalVue from '@/components/Info/InfoFestival.vue';
+import InfoFestival from '@/components/Info/InfoFestival.vue';
 import SustainbilityInfo from '@/components/Info/SustainbilityInfo.vue';
 import FestivalFaq from '@/components/Info/FestivalFaq.vue'
 import SectionHeader from "@/components/Layout/SectionHeader";
@@ -20,7 +20,7 @@ import SectionHeader from "@/components/Layout/SectionHeader";
     export default {
         // eksportere components
         components: {
-            InfoFestivalVue,
+            InfoFestival,
             SustainbilityInfo,
             FestivalFaq,
             SectionHeader
@@ -36,5 +36,13 @@ import SectionHeader from "@/components/Layout/SectionHeader";
 </script>
 
 <style lang="scss" scoped>
-
+  .festival-info {
+      color: $neon-turquoise;
+    h3 {
+    }
+    &__content-wrapper {
+      @include flex-column;
+      gap: 40px;
+    }
+  }
 </style>
