@@ -36,6 +36,7 @@ export default {
 .artist-card {
   padding: 1rem;
   width: fit-content;
+  cursor: pointer;
   text-transform: uppercase;
   border-radius: 20px;
   background-size: cover;
@@ -44,6 +45,7 @@ export default {
   h3 {
     font-size: $text-large;
     margin-bottom: 0;
+    text-align: left;
   }
   p {
     font-size: $text-xs;
@@ -68,7 +70,7 @@ export default {
   .text-wrapper {
     @include flex-column;
     align-items: flex-start;
-    justify-content: end;
+    justify-content: flex-end;
     gap: .5rem;
     height: 9rem;
     width: 9rem;

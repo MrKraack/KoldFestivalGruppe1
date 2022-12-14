@@ -41,7 +41,7 @@ export default {
   display: block;
 }
 
-$screen-mobile: 390px;
+$screen-mobile: 440px;
 @media screen and (max-width: $screen-mobile) {
   .mobile {
     display: block;

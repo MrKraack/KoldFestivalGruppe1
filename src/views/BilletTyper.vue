@@ -1,5 +1,6 @@
 <template>
  <!-- imports child component -->
+  <div>
       <section-header :color="color" :first-heading="firstHeading" :second-heading="secondHeading"/>
     <div class="ticket__container">
         <comp-billet-type
@@ -11,6 +12,7 @@
         :class="index === 2 ? 'ticket__third' : null"
         />  
     </div>
+  </div>
 </template>
 
 <script>

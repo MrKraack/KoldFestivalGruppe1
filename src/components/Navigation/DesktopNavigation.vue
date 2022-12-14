@@ -1,9 +1,9 @@
 <template>
   <nav class="desktop-navigation">
-    <a href="">Artister</a>
-    <a href="">Program</a>
-    <a href="">Billetter</a>
-    <a href="">Om kold</a>
+    <a href="#artister">Artister</a>
+    <a href="#program">Program</a>
+    <a href="#biletter">Billetter</a>
+    <a href="#om-kold">Om kold</a>
   </nav>
 </template>
 

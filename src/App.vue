@@ -2,10 +2,10 @@
   <TopNav/>
   <main>
     <hero-section id="home"/>
-    <artist-view/>
-    <program-oversigt/>
-    <billet-typer/>
-    <festival-info/>
+    <artist-view id="artister"/>
+    <program-oversigt id="program"/>
+    <billet-typer id="biletter"/>
+    <festival-info id="om-kold"/>
     <footer-info/>
   </main>
 </template>

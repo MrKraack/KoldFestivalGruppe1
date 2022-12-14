@@ -1,4 +1,5 @@
 <template>
+  <div>
       <section-header :color="color" :first-heading="firstHeading" :second-heading="secondHeading"/>
     <div>
         <!-- Viser componentet -->
@@ -6,6 +7,7 @@
         <FestivalFaq></FestivalFaq>
         <SustainbilityInfo></SustainbilityInfo>
     </div>
+  </div>
 </template>
 
 <script>

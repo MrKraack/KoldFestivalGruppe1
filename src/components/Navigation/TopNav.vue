@@ -3,7 +3,7 @@
     <div :class="navigationActive ? 'navigation-overlay--active' : 'navigation-overlay--hidden'" @click="clickedOutside"></div>
     <div class="top-nav__wrapper">
   <button class="top-nav__buy-now-button top-nav__buy-now-button--desktop-button">
-    <a target="blank" href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/">
+    <a href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/" target="blank">
     Køb billet
     </a>
     <logo-small class="small-logo"/>
@@ -52,7 +52,7 @@ export default {
     position: fixed;
     width: 100vw;
     top: 25px;
-    z-index: 1;
+    z-index: 2;
     &__wrapper {
       width: 100%;
       display: flex;
@@ -120,6 +120,7 @@ export default {
           }
           &::before {
             content: "";
+            z-index: -1;
             position: absolute;
             top: 0;
             left: 0;

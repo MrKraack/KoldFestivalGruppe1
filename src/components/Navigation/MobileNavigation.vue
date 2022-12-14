@@ -1,16 +1,17 @@
 <template>
   <nav class="mobile-navigation" :class="active ? 'mobile-navigation--visible' : 'mobile-navigation--hidden'">
     <div class="mobile-navigation__links-wrapper">
-    <a href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/" target="blank">Køb billet</a>
-    <a href="">Artister</a>
-    <a href="">Billeter</a>
-    <a href="">Om kold</a>
+    <a class="highlighted" href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/" target="blank">Køb billet</a>
+      <a href="#artister">Artister</a>
+      <a href="#program">Program</a>
+      <a href="#biletter">Billetter</a>
+      <a href="#om-kold">Om kold</a>
     </div>
     <div class="mobile-navigation__social-links">
-      <a href="https://www.facebook.com/koldfestival" target="blank">
+      <a :href="facebookUrlHref" target="blank">
         <facebook-icon/>
       </a>
-      <a href="https://www.instagram.com/koldfestival/?hl=da" target="blank">
+      <a :href="instagramUrlHref" target="blank">
         <instagram-icon/>
       </a>
     </div>
@@ -27,6 +28,13 @@ export default {
     FacebookIcon,
     InstagramIcon
   },
+  data() {
+    return {
+      facebookUrlHref: this.facebookUrl,
+      instagramUrlHref: this.instagramUrl,
+    }
+  },
+  inject: ['facebookUrl', 'instagramUrl'],
   props: {
     active: {
       type: Boolean,
@@ -60,6 +68,9 @@ export default {
         a {
           color: white;
         }
+      .highlighted {
+        font-weight: bold;
+      }
       }
     &__social-links {
       position: absolute;
