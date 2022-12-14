@@ -24,7 +24,7 @@ Inspiration og hjælp til modal fra https://vuejsexamples.com/build-a-custom-mod
                      :image="artist.imageUrl"
                      @click="openModal(artist)"
         />
-        <artist-modal v-show="showModal" v-if="!modalLoad" @close-modal="showModal = false"
+        <artist-modal v-show="showModal" v-if="!modalLoad" @close-modal="closeModal"
                       :artist-name="showArtistObject.name"
                       :artist-img="showArtistObject.imageUrl"
                       :artist-day="showArtistObject.playTime.day"
@@ -93,6 +93,10 @@ export default {
       console.log(this.showArtistObject)
         this.modalLoad = false
         this.showModal = true
+    },
+    closeModal () {
+      this.showModal = false
+      this.modalLoad = true
     }
   },
 }
