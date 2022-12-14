@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>{{infoText}}</p>
+        <p data-testid="testInfoText">{{infoText}}</p>
     </div>
 </template>
 

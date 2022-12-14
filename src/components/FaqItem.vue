@@ -3,9 +3,9 @@
         
             <div class="icon-text">
             <i @click="toggleAccordian" class="fi fi-rs-angle-small-right"></i>
-            <p @click="toggleAccordian" class="title">{{title}}</p>
+            <p @click="toggleAccordian" class="title" data-testid="faqItemTitle">{{title}}</p>
             </div>
-            <p class="beskrivelse">{{beskrivelse}}</p>
+            <p class="beskrivelse" data-testid="faqItemBeskrivelse">{{beskrivelse}}</p>
             <div class="line"></div>
       
     </section>

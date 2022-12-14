@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <p>{{sustainText}}</p>
+        <p data-testid="testSustainText">{{sustainText}}</p>
         
 </template>
 
