@@ -80,11 +80,6 @@ export default {
                 hotspot: true,
             },
         },
-        {
-            name: 'video',
-            title: 'Youtube Video link',
-            type: 'string',
-        },
     ],
 
     preview: {

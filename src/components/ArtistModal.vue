@@ -37,7 +37,6 @@ export default {
     artistMinute: String,
     location: String,
     description: String,
-    video: String,
   }
 }
 </script>

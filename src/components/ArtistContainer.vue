@@ -32,7 +32,6 @@ Inspiration og hjælp til modal fra https://vuejsexamples.com/build-a-custom-mod
                       :artist-minute="showArtistObject.playTime.time.hour"
                       :location="showArtistObject.location"
                       :description="showArtistObject.description"
-                      :video="showArtistObject.video"
         />
         <p v-show="loading">Loading .... </p>
       </div>
@@ -52,7 +51,6 @@ const query = `*[_type == "artist"]{
   playTime,
   location,
   description,
-  video,
   'imageUrl': image.asset->url
 }`;
 
