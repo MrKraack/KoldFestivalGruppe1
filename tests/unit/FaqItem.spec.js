@@ -1,4 +1,4 @@
-import faqItem from "@/components/FaqItem.vue";
+import faqItem from "@/components/Info/FaqItem.vue";
 import {mount} from "@vue/test-utils";
 
 describe("Testing if title gets text",  () => {

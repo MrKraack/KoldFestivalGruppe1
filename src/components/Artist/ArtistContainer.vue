@@ -135,6 +135,7 @@ export default {
 }
 .artist-container {
   @include flex-row;
+  margin: 0% 10%;
   padding: 2rem;
   gap: 2rem;
   justify-content: center;

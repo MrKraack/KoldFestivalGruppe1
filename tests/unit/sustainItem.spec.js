@@ -1,4 +1,4 @@
-import sustainItem from "@/components/sustainItem.vue"
+import sustainItem from "@/components/Info/sustainItem.vue"
 import { mount } from "@vue/test-utils"
 
 

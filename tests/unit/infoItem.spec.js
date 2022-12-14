@@ -1,4 +1,4 @@
-import infoItem from "@/components/infoItem.vue";
+import infoItem from "@/components/Info/infoItem.vue";
 import {mount} from "@vue/test-utils";
 
 describe("Checks if infoItem displays text from property",() => {

@@ -422,8 +422,7 @@ export default {
         display: flex;
         flex-direction: row;
         width: 100%;
-        margin-right: 5%;
-        margin-left: 5%;
+        margin: 1% 10%;
         
         
         .program_oversigt{
