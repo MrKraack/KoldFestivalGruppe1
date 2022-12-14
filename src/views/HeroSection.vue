@@ -26,6 +26,7 @@
     </div>
     <img :src="resolveSrc(this.handsColor)" alt="hands" class="notMobile">
     <img :src="resolveSrcMobile(this.handsColor)" alt="hands" class="mobile">
+    <img :src="resolveSrcDesktop('pink')" alt="hands" class="desktop">
   </section>
 </template>
 
@@ -55,6 +56,9 @@ export default {
     resolveSrcMobile(color) {
       return require(`@/assets/images/hands/${color}hands.png`)
     },
+    resolveSrcDesktop(color) {
+      return require(`@/assets/images/hands/${color}handsweb-desktop.png`)
+    }
   },
   inject: ['facebookUrl', 'instagramUrl', 'festivalDate']
 }
@@ -147,19 +151,23 @@ export default {
       }
     }
   }
-  .mobile {
+
+  .mobile, .notMobile, .desktop {
     display: block;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100vw;
   }
+
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
   .notMobile {
     display: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
   }
 
   $screen-mobile: 450px;
@@ -168,6 +176,18 @@ export default {
       display: none;
     }
     .notMobile {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: $screen-desktop) {
+    .mobile {
+      display: none;
+    }
+    .notMobile {
+      display: none;
+    }
+    .desktop {
       display: block;
     }
   }
