@@ -3,7 +3,7 @@
         <div class="footer__background">
         <div class="footer__sponsLogo">
         <div class="footer__sponsor">{{sponsors}}</div>
-        <img class="footer__logo" src="../../assets/images/blueKoldLogo.png" alt="">
+        <img class="footer__logo" src="../../assets/images/logo-hero.png" alt="">
         <div class="footer__sponsor">{{sponsors}}</div>
         </div>
         
@@ -95,6 +95,7 @@
 
     &__logo {
         height: 282px;
+      width: auto;
     }
     &__social {
       @include flex-center
@@ -262,7 +263,6 @@
     }
 
     .footer__logo {
-        width: 194px;
         height: 206px;
     }
 
@@ -300,7 +300,6 @@
     }
 
     .footer__logo {
-        width: 95px;
         height: 101px;
     }
 
