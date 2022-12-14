@@ -8,8 +8,8 @@
         </div>
         
         <div class="footer__social">
-            <a href="https://www.facebook.com/koldfestival"><img class="footer__socialicon" src="../../assets/images/facebookicon.png" alt=""></a>
-           <a href="https://www.instagram.com/koldfestival/?next=%2F"><img class="footer__socialicon" src="../../assets/images/instagramicon.png" alt=""></a>
+          <a :href="facebookUrlHref" target="blank"><facebook-icon class="footer__socialicon"></facebook-icon></a>
+          <a :href="instagramUrlHref" target="blank"><instagram-icon class="footer__socialicon" ></instagram-icon></a>
         </div>
 
         <section class="footer__info">
@@ -50,19 +50,29 @@
 </template>
 
 <script>
-
+    import FacebookIcon from "@/assets/svg/FacebookIcon";
+    import InstagramIcon from "@/assets/svg/InstagramIcon";
 
     // props from sanity
      export default {
     name: 'CompFooter',
+    components: {
+      FacebookIcon,
+      InstagramIcon
+    },
+    data() {
+      return {
+        facebookUrlHref: this.facebookUrl,
+        instagramUrlHref: this.instagramUrl
+      }
+    },
     props: {
         sponsors: Image,
         coordinator: String,
         phone: Number,
         email: String,
-
-    }
-  
+    },
+    inject: ['facebookUrl', 'instagramUrl']
   }
 </script>
 
@@ -86,7 +96,9 @@
     &__logo {
         height: 282px;
     }
-
+    &__social {
+      @include flex-center
+    }
     &__socialicon {
         // display: none;
         padding: 10px 0;
