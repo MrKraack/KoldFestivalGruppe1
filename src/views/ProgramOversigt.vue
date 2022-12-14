@@ -8,7 +8,7 @@
             </div>
             <!-- Container for friday -->
             <div class="sectionContainer">
-                <div class="program_oversigt" @click="toggleAccordionFriday" :class="accordionClassFriday">
+                <div class="program_oversigt" @click="toggleAccordionFriday" :class="accordionClassFriday" data-testid="testDivClick">
                     <!-- Header for  -->
                     <div class="boxHeader" :class="accordionClassFriday">
                         <h2>FREDAG</h2>
@@ -163,6 +163,8 @@ export default {
                         //Sort the array by concert time
                         this.festivalFriday.sort(this.compare);
                         this.festivalSaturday.sort(this.compare);
+                        console.log(this.festivalFriday)
+                        console.log(this.festivalSaturday)
                     }
                     (error) => {
                         this.error = error;
