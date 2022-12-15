@@ -52,7 +52,8 @@ const query = `*[_type == "faq"] {
 
 .festival-faq {
   h3 {
-    font-size: 30px;
+    font-size: $neon-undertitle-desktop;
+    margin:3%;
     color: $neon-turquoise;
     text-shadow: 0 0 6px $neon-turquoise;
   }
@@ -65,7 +66,7 @@ const query = `*[_type == "faq"] {
     font-size: $text-small;
     text-align: left;
     border-radius: 20px;
-    padding: 10%;
+    padding: 2%;
     margin: 1% 10%;
 }
 

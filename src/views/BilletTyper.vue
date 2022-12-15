@@ -75,7 +75,7 @@ const query = `*[_type == "billetType"]{
 
     .ticket__container {
         display: grid;
-        column-gap: 20px;
+        column-gap: 10%;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         margin: 1% 10%;
     }

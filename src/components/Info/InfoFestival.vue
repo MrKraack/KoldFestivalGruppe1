@@ -56,9 +56,10 @@ const query = `*[_type == "info"] {
 <style lang="scss" scoped>
 .info-festival {
   h3 {
-    font-size: 30px;
+    font-size: $neon-undertitle-desktop;
     color: $neon-turquoise;
     text-shadow: 0 0 6px $neon-turquoise;
+    margin: 3%;
 }
 }
 .container {
@@ -68,7 +69,7 @@ const query = `*[_type == "info"] {
     text-align: left;
     color:white;
     border-radius: 20px;
-    padding: 10%;
+    padding: 2%;
     margin: 1% 10%;
 }
 

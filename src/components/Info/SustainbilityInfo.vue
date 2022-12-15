@@ -1,6 +1,6 @@
 <template>
     <div class="sustainability-info">
-        <h3>Bæredygtig tiltag</h3>
+        <h3>Bæredygtige tiltag</h3>
         <div class="container">
         <sustainItem v-for="(sustain,index) in sustainData" :key="index" 
         :sustainTitle="sustain.sustainTitle"
@@ -54,9 +54,10 @@ const query = `*[_type == "sustain"] {
 
 .sustainability-info {
   h3 {
-    font-size: 30px;
+    font-size: $neon-undertitle-desktop;
     color: $neon-turquoise;
     text-shadow: 0 0 6px $neon-turquoise;
+    margin: 3%;
   }
 }
 
@@ -67,7 +68,7 @@ const query = `*[_type == "sustain"] {
     font-size: $text-small;
     text-align: left;
     border-radius: 20px;
-    padding: 10%;
+    padding: 5%;
     position: relative;
     margin: 1% 10%;
 }

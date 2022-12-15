@@ -320,11 +320,12 @@ export default {
           margin: 1% 10%;
           border: 2px solid $neon-orange;
         box-shadow: 0px 0px 10px $neon-orange;
-        border-radius: 5px;
+        border-radius: 25px 25px 0px 0px;
         .boxHeader {
             margin: 0px;
             background-color: $neon-orange;
             color: white;
+            border-radius: 20px 20px 0px 0px;
             
             h2 {
                 display: flex;
@@ -398,6 +399,7 @@ export default {
                 .row:last-child {
                     div {
                         border-bottom: 0px;
+                        
                     }
                 }
                 }
