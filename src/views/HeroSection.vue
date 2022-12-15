@@ -46,7 +46,7 @@ export default {
       instagramUrlHref: this.instagramUrl,
       eventDate: this.festivalDate,
       handsColor: 'green',
-      url: "https://ik.imagekit.io/hra0dn2xj/kold-festival.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1670913041692"
+      url: "https://ik.imagekit.io/hra0dn2xj/background-video.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1671094026130"
     }
   },
   methods: {
