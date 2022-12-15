@@ -35,8 +35,6 @@ const query = `*[_type == "faq"] {
                 sanity.fetch(query).then(
                     (faq) => {
                         this.faqData = faq;
-
-                        console.log(faq)
                     },
                     (error) => {
                         this.error = error;

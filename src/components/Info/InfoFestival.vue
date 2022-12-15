@@ -25,8 +25,7 @@ const query = `*[_type == "info"] {
         data() {
             return {
                 loading: true,
-                infoData: [],
-                
+                infoData: []
             }
         },
         // Når den har kørt, hentes dataen
@@ -40,8 +39,6 @@ const query = `*[_type == "info"] {
                 sanity.fetch(query).then(
                     (info) => {
                         this.infoData = info;
-
-                        console.log(info)
                     },
                     (error) => {
                         this.error = error;

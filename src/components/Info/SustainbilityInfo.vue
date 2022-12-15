@@ -37,8 +37,6 @@ const query = `*[_type == "sustain"] {
                 sanity.fetch(query).then(
                     (sustain) => {
                         this.sustainData = sustain;
-
-                        console.log(sustain)
                     },
                     (error) => {
                         this.error = error;

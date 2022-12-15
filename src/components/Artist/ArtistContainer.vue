@@ -80,8 +80,6 @@ export default {
           (artists) => {
             this.artists = artists;
             this.loading = false
-
-            console.log(artists)
           },
           (error) => {
             this.error = error;

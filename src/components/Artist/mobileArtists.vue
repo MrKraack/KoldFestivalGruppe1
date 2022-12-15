@@ -96,7 +96,6 @@ export default {
       await sanity.fetch(query).then(
           (artists) => {
             this.artists = artists;
-            console.log(artists)
           },
           (error) => {
             this.error = error;
