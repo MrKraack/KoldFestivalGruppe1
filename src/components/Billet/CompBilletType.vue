@@ -73,7 +73,6 @@
             text-align: left;
             justify-content: space-evenly;
             margin: 25px 0;
-            margin-left: -20px;
             margin-right: 5px;
 
             

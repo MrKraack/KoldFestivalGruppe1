@@ -85,7 +85,7 @@ export default {
     }
 
     &--hidden {
-      transform: translateX(100%);
+      transform: translateX(110%);
       transition: transform 0.2s ease-in-out;
     }
   }

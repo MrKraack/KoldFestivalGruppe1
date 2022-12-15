@@ -147,6 +147,7 @@ export default {
         bottom: 30px;
         left: 30px;
         gap: 30px;
+        z-index: 101;
         @include flex-column;
       }
     }
@@ -155,9 +156,10 @@ export default {
   .mobile, .notMobile, .desktop {
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 100vw;
+    z-index: 100;
   }
 
   .desktop {

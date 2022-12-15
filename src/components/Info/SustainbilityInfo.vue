@@ -71,6 +71,9 @@ const query = `*[_type == "sustain"] {
     padding: 5%;
     position: relative;
     margin: 1% 10%;
+    
+        
+        
 }
 
 //ipad

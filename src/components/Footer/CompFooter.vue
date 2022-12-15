@@ -111,7 +111,7 @@
 
 
     &__info {
-        margin: 20px 20px;
+        margin: 0px 20px;
         color: white;   
         display: flex;
         justify-content: space-around;
@@ -226,7 +226,7 @@
 // media screen 1000px
 @media screen and (max-width: 1000px) {
     .footer__info {
-        margin: 20px 20px;
+        margin: 0 20px;
     }
 
     .footer__infocontainer {
@@ -239,7 +239,7 @@
 @media screen and (max-width: 900px) {
 
     .footer__info {
-        margin: 20px 20px;
+        margin: 0 20px;
     }
     .footer__box {
         margin-left: 100px;

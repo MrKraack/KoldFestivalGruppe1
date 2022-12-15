@@ -81,7 +81,7 @@ import TrashIcon from '@/assets/svg/TrashIcon.vue';
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 34px;
+    gap: 15px;
 }
 .affald-ikon img {
     height: 87px;
@@ -90,8 +90,8 @@ import TrashIcon from '@/assets/svg/TrashIcon.vue';
 }
 
 .img-container {
-    height: 87px;
-    width: 87px;
+    height: 70px;
+    width: 70px;
     border: 1px solid $neon-turquoise;
     border-radius: 10px;
     text-align: center;
@@ -103,6 +103,7 @@ import TrashIcon from '@/assets/svg/TrashIcon.vue';
 h4 {
     text-align: center;
     color: $neon-turquoise;
+    margin-bottom: 5%;
 }
 
 .img-container p {
