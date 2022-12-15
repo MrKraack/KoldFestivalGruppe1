@@ -162,8 +162,7 @@ export default {
                         //Sort the array by concert time
                         this.festivalFriday.sort(this.compare);
                         this.festivalSaturday.sort(this.compare);
-                        console.log(this.festivalFriday)
-                        console.log(this.festivalSaturday)
+                        
                     }
                     (error) => {
                         this.error = error;
