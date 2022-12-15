@@ -178,6 +178,9 @@ export default {
     .notMobile {
       display: block;
     }
+    .desktop {
+      display: none;
+    }
   }
 
   @media screen and (min-width: $screen-desktop) {

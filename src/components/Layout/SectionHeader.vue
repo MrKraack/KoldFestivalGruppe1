@@ -2,6 +2,7 @@
   <div class="section-header">
     <img v-if="haveHands" :src="resolveSrc(this.color)" alt="hands" class="notMobile">
     <img v-if="haveHands" :src="resolveSrcMobile(this.color)" alt="hands" class="mobile">
+    <img v-if="haveHands" :src="resolveSrcDesktop(this.color)" alt="hands" class="desktop">
     <section class="heading">
       <h3 :style="{textShadow: `0 0 5px #fff,
                   0 0 10px #fff,
@@ -32,6 +33,9 @@ export default {
     resolveSrcMobile(color) {
       return require(`@/assets/images/hands/${color}hands.png`)
     },
+    resolveSrcDesktop(color) {
+      return require(`@/assets/images/hands/${color}handsweb-desktop.png`)
+    }
   },
   computed: {
     resolveColor() {
@@ -83,7 +87,10 @@ img {
   display: none;
 }
 .notMobile {
-  display: block;
+  display: none;
+}
+.desktop {
+  display: block
 }
 
 $screen-mobile: 450px;
@@ -93,6 +100,21 @@ $screen-mobile: 450px;
   }
   .notMobile {
     display: none;
+  }
+  .desktop {
+    display: none
+  }
+}
+
+@media screen and (min-width: $screen-mobile) and (max-width: $screen-desktop) {
+  .mobile {
+    display: none;
+  }
+  .notMobile {
+    display: block;
+  }
+  .desktop {
+    display: none
   }
 }
 </style>
