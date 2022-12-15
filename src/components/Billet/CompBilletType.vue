@@ -84,7 +84,7 @@
         align-items: center;
         justify-content: space-around;
         margin-top: 25px;
-        width: 168px;
+        width: 174px;
         height: 37px;
         left: 35px;
         top: 2607px;
