@@ -74,7 +74,7 @@ export default {
       border: 3px solid $neon-pink;
       border-radius: 0px 10px 10px 0px;
       filter: drop-shadow(0px 0px 3px $neon-pink);
-      width: 135px;
+      width: 145px;
       height: 30px;
       background-color: $neon-pink;
       a {
