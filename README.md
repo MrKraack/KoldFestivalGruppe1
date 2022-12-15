@@ -5,12 +5,12 @@ This is a project for Musik Kolding, where we had to develop a new website, for 
 For this project, we have used Vue js as our framework, and Sanity.IO to handle the database
 
 ### Vue JS
-Link: https://vuejs.org/
+Link: https://vuejs.org/ <br />
 We have used Vue JS for our project, because it's a framework that's focused on working with components, and that makes
 it easier to maintain and easier to work as a group
 
 ### Sanity.IO
-Link: https://www.sanity.io/
+Link: https://www.sanity.io/ <br />
 For the database, we have chosen to use Sanity.IO, because it's very user friendly, and even non programmers, can with 
 ease make new entries.
 It's also easy for programmers to use, since we can just make a query request using GraphQL to Sanity.IO, and have the
