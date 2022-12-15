@@ -64,9 +64,10 @@ export default {
       position: absolute;
       top: 0;
       right: 0;
+      z-index: 11;
     }
     &__hamburger {
-      z-index: 2;
+      z-index: 12;
     }
     &__buy-now-button {
       line-height: 0;

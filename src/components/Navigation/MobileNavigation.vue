@@ -56,6 +56,7 @@ export default {
     filter: drop-shadow(0px 0px 3px $neon-pink);
     padding-top: 70px;
     position: relative;
+    z-index: 12;
 
     &__links-wrapper {
         padding-left: 20px;

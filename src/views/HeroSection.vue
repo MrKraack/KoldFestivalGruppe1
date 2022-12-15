@@ -147,7 +147,7 @@ export default {
         bottom: 30px;
         left: 30px;
         gap: 30px;
-        z-index: 101;
+        z-index: 11;
         @include flex-column;
       }
     }
@@ -159,7 +159,7 @@ export default {
     bottom: -5px;
     left: 0;
     width: 100vw;
-    z-index: 100;
+    z-index: 1;
   }
 
   .desktop {

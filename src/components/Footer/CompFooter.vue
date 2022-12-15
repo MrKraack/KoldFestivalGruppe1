@@ -149,6 +149,8 @@
 
     &__event {
         text-align: left;
+      @include flex-column;
+      gap: 5px;
     }
 
     
