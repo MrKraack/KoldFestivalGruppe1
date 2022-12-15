@@ -1,6 +1,6 @@
 <template>
   <section class="hero-section">
-    <video playsinline autoplay muted loop :poster='require("@/assets/images/mockup-background.png")' class="hero-section__video-background" >>
+    <video playsinline autoplay muted loop :poster='require("@/assets/images/mockup-background.jpg")' class="hero-section__video-background" >>
     <h2>hello</h2>
       <source :src='url' type='video/mp4'>
     </video>
@@ -26,7 +26,7 @@
     </div>
     <img :src="resolveSrc(this.handsColor)" alt="hands" class="notMobile">
     <img :src="resolveSrcMobile(this.handsColor)" alt="hands" class="mobile">
-    <img :src="resolveSrcDesktop('pink')" alt="hands" class="desktop">
+    <img :src="resolveSrcDesktop(this.handsColor)" alt="hands" class="desktop">
   </section>
 </template>
 
