@@ -7,25 +7,25 @@
             Ved godt at der er mange div, men kan ikke finde bedre metoder der virker -->
             <div class="img-wrapper1">
                 <div class="img-container">
-                <img src="../../assets/images/affaldsikoner/glas.png" alt="glas-billede">
+                <GlassIcon class="sustainIcon"/>
                 <p>Glas</p>
                 </div>
                 <div class="img-container">
-                <img src="../../assets/images/affaldsikoner/plast.png" alt="plat-billede">
+                <PlastIcon class="sustainIcon-wide"/>
                 <p>Plast</p>
                 </div>
                 <div class="img-container">
-                <img src="../../assets/images/affaldsikoner/metal.png" alt="metal-billede">
+                <MetalIcon class="sustainIcon-wide"/>
                 <p>Metal</p>
                 </div>
             </div>
             <div class="img-wrapper2">
                 <div class="img-container">
-                <img src="../../assets/images/affaldsikoner/madaffald.png" alt="madaffald-billede">
+                <MadIcon class="sustainIcon-wide"/>
                 <p>Madaffald</p>
                 </div>
                 <div class="img-container">
-                <img src="../../assets/images/affaldsikoner/restaffald.png" alt="restaffald-billede">
+                <TrashIcon class="sustainIcon-wide"/>
                 <p>Restaffald</p>
                 </div>
             </div>
@@ -35,7 +35,21 @@
 </template>
 
 <script>
+import GlassIcon from '@/assets/svg/GlassIcon.vue';
+import PlastIcon from '@/assets/svg/PlastIcon.vue';
+import MetalIcon from '@/assets/svg/MetalIcon.vue';
+import MadIcon from '@/assets/svg/MadIcon.vue';
+import TrashIcon from '@/assets/svg/TrashIcon.vue';
+
+
     export default {
+        components: {
+        GlassIcon,
+        PlastIcon,
+        MetalIcon,
+        MadIcon,
+        TrashIcon
+},
         props: {
             sustainTitle: String,
             sustainText: String,
@@ -94,6 +108,18 @@ h4 {
 .img-container p {
     margin: 0;
     padding: 0;
+}
+
+.sustainIcon {
+    width: auto;
+    height: 100%;
+}
+
+.sustainIcon-wide {
+    transform: translateY(10px);
+    margin-bottom: 20%;
+    width: auto;
+    height: 80%;
 }
 
 //ipad pro + mini
