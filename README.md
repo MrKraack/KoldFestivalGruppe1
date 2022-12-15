@@ -26,6 +26,6 @@ npm install
 ### Compiles and hot-reloads for development
 after using "npm install", you can now run the command below to host a local version of the website
 ```
-"npm install"
+npm run serve
 ```
 
