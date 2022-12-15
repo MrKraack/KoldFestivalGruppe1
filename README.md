@@ -18,13 +18,14 @@ option to sort through the data using GrapQL. That way, we don't have to get the
 need right now
 
 ### Project setup
+When you first download this project, you should run the command below, to install all the dependencies our project uses
 ```
-When you first download this project, you should run the command "npm install", to install all the dependencies our
-project uses
+npm install 
 ```
 
 ### Compiles and hot-reloads for development
+after using "npm install", you can now run the command below to host a local version of the website
 ```
-after using "npm install", you can now run the command "npm run serve" to host a local version of the website
+"npm install"
 ```
 
