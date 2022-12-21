@@ -11,7 +11,7 @@
   <hamburger-menu class="top-nav__hamburger" :active="navigationActive" @toggle-menu="toggleNavigation"/>
     <desktop-navigation class="top-nav__desktop-navigation"/>
     </div>
-  <mobile-navigation   class="top-nav__mobile-navigation" :active="navigationActive"/>
+  <mobile-navigation   class="top-nav__mobile-navigation" @close-navigation="toggleNavigation" :active="navigationActive"/>
   </aside>
 </template>
 

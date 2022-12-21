@@ -1,11 +1,11 @@
 <template>
   <nav class="mobile-navigation" :class="active ? 'mobile-navigation--visible' : 'mobile-navigation--hidden'">
     <div class="mobile-navigation__links-wrapper">
-    <a class="highlighted" href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/" target="blank">Køb billet</a>
-      <a href="#artister">Artister</a>
-      <a href="#program">Program</a>
-      <a href="#biletter">Billetter</a>
-      <a href="#om-kold">Om kold</a>
+    <a class="highlighted" href="https://tix.dk/da/musikkolding/buyingflow/tickets/15815/23040/" @click="closeNavigation" target="blank">Køb billet</a>
+      <a href="#artister" @click="closeNavigation">Artister</a>
+      <a href="#program" @click="closeNavigation">Program</a>
+      <a href="#biletter" @click="closeNavigation">Billetter</a>
+      <a href="#om-kold" @click="closeNavigation">Om kold</a>
     </div>
     <div class="mobile-navigation__social-links">
       <a :href="facebookUrlHref" target="blank">
@@ -40,6 +40,11 @@ export default {
       type: Boolean,
       required: true,
       default: false
+    }
+  },
+  methods: {
+    closeNavigation() {
+      this.$emit('close-navigation')
     }
   }
 }
